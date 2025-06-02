@@ -29,34 +29,28 @@ export const navItems: NavItem[] = [
     isActive: false,
     items: [] // No child items
   },
+  // {
+  //   title: 'Kanban',
+  //   url: '/dashboard/kanban',
+  //   icon: 'kanban',
+  //   shortcut: ['k', 'k'],
+  //   isActive: false,
+  //   items: [] // No child items
+  // },
   {
-    title: 'Account',
-    url: '#', // Placeholder as there is no direct link for the parent
-    icon: 'billing',
-    isActive: true,
-
+    title: 'System Configuration',
+    url: '#',
+    icon: 'settingsCog',
+    shortcut: ['s', 's'],
+    isActive: false,
     items: [
       {
-        title: 'Profile',
-        url: '/dashboard/profile',
-        icon: 'userPen',
+        title: 'Office',
+        url: '/system-configuration/office',
+        icon: 'office',
         shortcut: ['m', 'm']
-      },
-      {
-        title: 'Login',
-        shortcut: ['l', 'l'],
-        url: '/',
-        icon: 'login'
       }
-    ]
-  },
-  {
-    title: 'Kanban',
-    url: '/dashboard/kanban',
-    icon: 'kanban',
-    shortcut: ['k', 'k'],
-    isActive: false,
-    items: [] // No child items
+    ] // No child items
   }
 ];
 

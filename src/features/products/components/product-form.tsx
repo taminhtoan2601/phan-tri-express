@@ -49,7 +49,9 @@ const formSchema = z.object({
     message: 'Product name must be at least 2 characters.'
   }),
   category: z.string(),
-  price: z.number(),
+  price: z.number().min(0, {
+    message: 'Price must be at least 0.'
+  }),
   description: z.string().min(10, {
     message: 'Description must be at least 10 characters.'
   })
@@ -166,7 +168,7 @@ export default function ProductForm({
                     <FormControl>
                       <Input
                         type='number'
-                        step='0.01'
+                        step='1000'
                         placeholder='Enter price'
                         {...field}
                       />

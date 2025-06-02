@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'Phan Tri Express'
 };
 
-export default async function DashboardLayout({
+export default async function SystemConfigurationLayout({
   children
 }: {
   children: React.ReactNode;

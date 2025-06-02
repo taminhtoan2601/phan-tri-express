@@ -100,7 +100,7 @@ export const fakeProducts = {
     categories?: string;
     search?: string;
   }) {
-    await delay(1000);
+    await delay(500);
     const categoriesArray = categories ? categories.split('.') : [];
     const allProducts = await this.getAll({
       categories: categoriesArray,
