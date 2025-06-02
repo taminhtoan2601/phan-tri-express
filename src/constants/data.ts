@@ -44,13 +44,86 @@ export const navItems: NavItem[] = [
     shortcut: ['s', 's'],
     isActive: false,
     items: [
+      // Administrative Section
       {
-        title: 'Office',
-        url: '/system-configuration/office',
+        title: 'Administrative',
+        url: '/system-configuration/administrative',
         icon: 'office',
-        shortcut: ['m', 'm']
+        items: [
+          {
+            title: 'Countries',
+            url: '/system-configuration/administrative/countries',
+            shortcut: ['c', 'o']
+          },
+          {
+            title: 'Branches',
+            url: '/system-configuration/administrative/branches',
+            shortcut: ['b', 'r']
+          },
+          {
+            title: 'Zones',
+            url: '/system-configuration/administrative/zones',
+            shortcut: ['z', 'n']
+          }
+        ]
+      },
+      // System Section
+      {
+        title: 'System',
+        url: '/system-configuration/system',
+        icon: 'settings',
+        items: [
+          {
+            title: 'Commodity Types',
+            url: '/system-configuration/system/commodity-types',
+            shortcut: ['c', 't']
+          },
+          {
+            title: 'Shipping Types',
+            url: '/system-configuration/system/shipping-types',
+            shortcut: ['s', 't']
+          },
+          {
+            title: 'Payment Types',
+            url: '/system-configuration/system/payment-types',
+            shortcut: ['p', 't']
+          },
+          {
+            title: 'Insurance Packages',
+            url: '/system-configuration/system/insurance-packages',
+            shortcut: ['i', 'p']
+          }
+        ]
+      },
+      // Pricing Section
+      {
+        title: 'Pricing',
+        url: '/system-configuration/pricing',
+        icon: 'billing',
+        items: [
+          {
+            title: 'Routes',
+            url: '/system-configuration/pricing/routes',
+            shortcut: ['r', 't']
+          },
+          {
+            title: 'Carriers',
+            url: '/system-configuration/pricing/carriers',
+            shortcut: ['c', 'a']
+          },
+          {
+            title: 'Insurance Packages',
+            url: '/system-configuration/insurance-packages',
+            shortcut: ['i', 'p']
+          },
+          {
+            title: 'Price Configurations',
+            url: '/system-configuration/price-configurations',
+            shortcut: ['p', 'c']
+          }
+        ]
       }
-    ] // No child items
+    ]
   }
 ];
 

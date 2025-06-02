@@ -25,7 +25,7 @@ export default async function SystemConfigurationLayout({
         <SidebarInset>
           <Header />
           {/* page main content */}
-          {children}
+          <div className='p-6'>{children}</div>
           {/* page main content ends */}
         </SidebarInset>
       </SidebarProvider>
