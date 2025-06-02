@@ -13,6 +13,7 @@ import {
   PriceConfiguration,
   Route,
   ShippingType,
+  ShippingService,
   Zone
 } from '@/types/system-configuration';
 
@@ -26,6 +27,7 @@ import {
   fakePaymentTypes,
   fakePriceConfigurations,
   fakeRoutes,
+  fakeShippingServices,
   fakeShippingTypes,
   fakeZones
 } from '@/constants/mock-system-config';
@@ -41,6 +43,7 @@ const initializeMockData = () => {
   fakeCarriers.initialize();
   fakeInsurancePackages.initialize();
   fakePriceConfigurations.initialize();
+  fakeShippingServices.initialize();
   fakeZones.initialize();
 };
 
@@ -169,6 +172,27 @@ export async function updateShippingType(
 
 export async function deleteShippingType(id: number): Promise<void> {
   return fakeShippingTypes.delete(id);
+}
+
+export async function getShippingServices(): Promise<ShippingService[]> {
+  return fakeShippingServices.getAll();
+}
+
+export async function createShippingService(
+  shippingService: Omit<ShippingService, 'id'>
+): Promise<ShippingService> {
+  return fakeShippingServices.create(shippingService);
+}
+
+export async function updateShippingService(
+  id: number,
+  shippingService: Partial<ShippingService>
+): Promise<ShippingService> {
+  return fakeShippingServices.update(id, shippingService);
+}
+
+export async function deleteShippingService(id: number): Promise<void> {
+  return fakeShippingServices.delete(id);
 }
 
 export async function getPaymentTypes(): Promise<PaymentType[]> {

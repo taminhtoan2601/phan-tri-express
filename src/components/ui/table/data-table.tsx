@@ -23,6 +23,15 @@ export function DataTable<TData>({
   actionBar,
   children
 }: DataTableProps<TData>) {
+  console.log('DataTable received children:', children);
+  console.log('DataTable received actionBar:', actionBar);
+  console.log('DataTable received table:', table);
+  console.log(
+    'DataTable received table header groups:',
+    table.getHeaderGroups()
+  );
+  console.log('DataTable received table rows:', table.getRowModel().rows);
+
   return (
     <div className='flex flex-1 flex-col space-y-4'>
       {children}

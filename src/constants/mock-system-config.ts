@@ -94,16 +94,45 @@ export const fakeCountries = {
   initialize() {
     // Sử dụng dữ liệu từ file fake-countries.ts
     this.records = [...seedCountries];
+
+    // Đảm bảo fakeZones đã được khởi tạo trước
+    if (fakeZones.records.length === 0) {
+      fakeZones.initialize();
+    }
   },
 
+  /**
+   * Trả về danh sách quốc gia với thông tin zone đã được join
+   */
   async getAll() {
     await delay(300); // Simulate network delay
-    return [...this.records];
+
+    // Đảm bảo zone data đã được khởi tạo
+    if (fakeZones.records.length === 0) {
+      fakeZones.initialize();
+    }
+
+    // Join country với zone data
+    return this.records.map((country) => {
+      const zone = fakeZones.records.find((z) => z.id === country.zoneId);
+      return {
+        ...country,
+        zone: zone
+      };
+    }) as Country[];
   },
 
   async getById(id: number): Promise<Country | undefined> {
     await delay(200);
-    return this.records.find((country) => country.id === id);
+    const country = this.records.find((country) => country.id === id);
+    if (!country) return undefined;
+
+    // Join với zone data
+    const zone = fakeZones.records.find((z) => z.id === country.zoneId);
+    return {
+      ...country,
+      zone
+    };
   },
 
   async create(data: Omit<Country, 'id'>): Promise<Country> {
@@ -113,7 +142,13 @@ export const fakeCountries = {
       ...data
     };
     this.records.push(newCountry);
-    return newCountry;
+
+    // Join với zone data
+    const zone = fakeZones.records.find((z) => z.id === newCountry.zoneId);
+    return {
+      ...newCountry,
+      zone
+    };
   },
 
   async update(id: number, data: Partial<Country>): Promise<Country> {
@@ -122,7 +157,14 @@ export const fakeCountries = {
     if (index === -1) throw new Error('Country not found');
 
     this.records[index] = { ...this.records[index], ...data };
-    return this.records[index];
+
+    // Join với zone data
+    const updatedCountry = this.records[index];
+    const zone = fakeZones.records.find((z) => z.id === updatedCountry.zoneId);
+    return {
+      ...updatedCountry,
+      zone
+    };
   },
 
   async delete(id: number): Promise<void> {

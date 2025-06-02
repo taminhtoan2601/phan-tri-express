@@ -113,7 +113,7 @@ export default function PricingOverview() {
 
         {/* Insurance Packages Card */}
         <Link
-          href='/system-configuration/system/insurance-packages'
+          href='/system-configuration/pricing/insurance-packages'
           className='block transition-transform hover:scale-105'
         >
           <Card className='h-full'>
@@ -142,7 +142,7 @@ export default function PricingOverview() {
 
         {/* Price Configurations Card */}
         <Link
-          href='/system-configuration/price-configurations'
+          href='/system-configuration/pricing/prices'
           className='block transition-transform hover:scale-105'
         >
           <Card className='h-full'>

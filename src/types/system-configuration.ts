@@ -28,6 +28,7 @@ export interface Country {
   name: string; // Tên đầy đủ của quốc gia
   continent: string; // Tên châu lục (để filter hoặc grouping)
   zoneId: number; // Tham chiếu tới Zone.id
+  zone?: Zone;
 }
 
 /**

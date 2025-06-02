@@ -13,9 +13,16 @@ import {
 } from '@/components/ui/card';
 import {
   getCommodityTypes,
-  getPaymentTypes
+  getPaymentTypes,
+  getShippingServices,
+  getShippingTypes
 } from '@/lib/api/system-configuration-api';
-import { CommodityType, PaymentType } from '@/types/system-configuration';
+import {
+  CommodityType,
+  PaymentType,
+  ShippingService,
+  ShippingType
+} from '@/types/system-configuration';
 
 /**
  * System overview page component
@@ -32,6 +39,18 @@ export default function SystemOverview() {
   const { data: paymentTypes = [] } = useQuery<PaymentType[]>({
     queryKey: ['payment-types'],
     queryFn: () => getPaymentTypes(),
+    staleTime: 60000 // 1 minute
+  });
+
+  const { data: shippingServices = [] } = useQuery<ShippingService[]>({
+    queryKey: ['shipping-services'],
+    queryFn: () => getShippingServices(),
+    staleTime: 60000 // 1 minute
+  });
+
+  const { data: shippingTypes = [] } = useQuery<ShippingType[]>({
+    queryKey: ['shipping-types'],
+    queryFn: () => getShippingTypes(),
     staleTime: 60000 // 1 minute
   });
 
@@ -97,13 +116,41 @@ export default function SystemOverview() {
               <div className='flex w-full items-center justify-between'>
                 <span className='text-muted-foreground'>Service Types</span>
                 <span className='bg-primary/10 text-primary rounded-full px-3 py-1 text-lg font-medium'>
-                  {/* No API call for shipping types yet */}0
+                  {shippingTypes?.length || 0}
                 </span>
               </div>
             </CardFooter>
           </Card>
         </Link>
-
+        {/* Shipping Services Card */}
+        <Link
+          href='/system-configuration/system/shipping-services'
+          className='block transition-transform hover:scale-105'
+        >
+          <Card className='h-full'>
+            <CardHeader>
+              <div className='flex items-center justify-between'>
+                <CardTitle>Shipping Services</CardTitle>
+                <Truck className='text-primary h-6 w-6' />
+              </div>
+              <CardDescription>Manage shipping service types</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p>
+                Configure shipping service types with different speed and cost
+                options
+              </p>
+            </CardContent>
+            <CardFooter>
+              <div className='flex w-full items-center justify-between'>
+                <span className='text-muted-foreground'>Service Types</span>
+                <span className='bg-primary/10 text-primary rounded-full px-3 py-1 text-lg font-medium'>
+                  {shippingServices?.length || 0}
+                </span>
+              </div>
+            </CardFooter>
+          </Card>
+        </Link>
         {/* Payment Types Card */}
         <Link
           href='/system-configuration/system/payment-types'
