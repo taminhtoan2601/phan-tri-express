@@ -42,7 +42,7 @@ export const navItems: NavItem[] = [
     url: '#',
     icon: 'settingsCog',
     shortcut: ['s', 's'],
-    isActive: false,
+    isActive: true,
     items: [
       // Administrative Section
       {

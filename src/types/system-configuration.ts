@@ -49,7 +49,7 @@ export interface Branch {
   discount: number;
   address: string;
   phone: string;
-  countryId: number;
+  cityId: number;
 }
 
 // System

@@ -26,6 +26,7 @@ import {
   zones as seedZones,
   countries as seedCountries,
   cities as seedCities,
+  branches as seedBranches,
   routes as seedRoutes,
   prices as seedPrices,
   pricingRules as seedPricingRules,
@@ -238,40 +239,12 @@ export const fakeBranches = {
   records: [] as Branch[],
 
   initialize() {
-    // Ensure countries are initialized first
-    if (fakeCountries.records.length === 0) {
-      fakeCountries.initialize();
+    // Ensure cities are initialized first
+    if (fakeCities.records.length === 0) {
+      fakeCities.initialize();
     }
 
-    const branchNames = [
-      'Main Office',
-      'Downtown Branch',
-      'Central Logistics',
-      'North Distribution',
-      'South Regional',
-      'East Wing',
-      'West Operations',
-      'International Hub',
-      'Airport Terminal',
-      'Seaport Center'
-    ];
-
-    this.records = branchNames.map((name, index) => {
-      const country = getRandomItem(fakeCountries.records);
-      return {
-        id: index + 1,
-        code: name
-          .split(' ')
-          .map((word) => word[0])
-          .join('')
-          .toUpperCase(),
-        name,
-        discount: parseFloat(faker.commerce.price({ min: 0, max: 15, dec: 2 })),
-        phone: faker.phone.number(),
-        address: faker.location.streetAddress({ useFullAddress: true }),
-        countryId: country.id
-      };
-    });
+    this.records = [...seedBranches];
   },
 
   async getAll() {

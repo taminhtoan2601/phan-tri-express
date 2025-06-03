@@ -1,42 +1,39 @@
 'use client';
 
+import { parseAsInteger, useQueryState } from 'nuqs';
 import { DataTable } from '@/components/ui/table/data-table';
 import { DataTableToolbar } from '@/components/ui/table/data-table-toolbar';
 import { useDataTable } from '@/hooks/use-data-table';
 import { ColumnDef } from '@tanstack/react-table';
-import { parseAsInteger, useQueryState } from 'nuqs';
 
-interface CountriesTableProps<TData, TValue> {
+interface ZonesTableProps<TData, TValue> {
   data: TData[];
   totalItems: number;
   columns: ColumnDef<TData, TValue>[];
 }
 
 /**
- * Advanced data table for displaying countries with filtering, sorting, and pagination
+ * Zones table component with advanced features
  */
-export function CountriesTable<TData, TValue>({
+export function ZonesTable<TData, TValue>({
   data,
   totalItems,
   columns
-}: CountriesTableProps<TData, TValue>) {
+}: ZonesTableProps<TData, TValue>) {
   // Get page size from URL query parameter
   const [pageSize] = useQueryState('perPage', parseAsInteger.withDefault(10));
 
   // Calculate page count for pagination
   const pageCount = Math.ceil(totalItems / pageSize);
 
-  // Initialize table with the useDataTable hook - simplified to match ProductTable pattern
-  // Không cần truyền zonesData nữa vì dữ liệu countries đã bao gồm zone
+  // Initialize table with the useDataTable hook
   const { table } = useDataTable({
     data,
     columns,
-    pageCount: pageCount,
+    pageCount,
     shallow: false, // Setting to false triggers a network request with the updated querystring
     debounceMs: 500 // Match the debounce timing in ProductTable
   });
-
-  // Debugging check
 
   return (
     <DataTable table={table}>
