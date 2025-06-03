@@ -1,7 +1,7 @@
 'use client';
 
-import { Country, Zone } from '@/types/system-configuration';
-import { fakeCountries, fakeZones } from '@/constants/mock-system-config';
+import { Country } from '@/types/system-configuration';
+import { fakeCountries } from '@/constants/mock-system-config';
 import { useQuery } from '@tanstack/react-query';
 import { CountriesTable } from './countries-table';
 import { columns } from './columns';
@@ -48,20 +48,15 @@ const getCountries = async (
   // Get all countries (in a real app this would have server-side filtering)
   const allCountries = await fakeCountries.getAll();
 
-  console.log('All countries from API:', allCountries);
-
   // If no countries are returned, use some default data
   if (!allCountries || allCountries.length === 0) {
-    console.log('No countries found, using default data');
     // Reinitialize the mock data
     fakeCountries.initialize();
     // Try to get the data again
     const retryCountries = await fakeCountries.getAll();
-    console.log('Retry countries:', retryCountries);
 
     // If still no data, provide some default countries
     if (!retryCountries || retryCountries.length === 0) {
-      console.log('Still no countries, using hardcoded defaults');
       return {
         countries: [
           {
@@ -88,7 +83,6 @@ const getCountries = async (
 
   // Apply filtering
   let filteredCountries = [...allCountries];
-
   if (filters) {
     // Apply name search filter
     if (filters.name) {
@@ -152,13 +146,6 @@ const getCountries = async (
     countries: paginatedCountries,
     total: filteredCountries.length
   };
-};
-
-/**
- * Fetches zones for use in country references
- */
-const getZones = async (): Promise<Zone[]> => {
-  return fakeZones.getAll();
 };
 
 /**

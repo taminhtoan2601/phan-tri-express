@@ -40,6 +40,7 @@ export interface City {
   code: string; // UN/LOCODE 5 ký tự (không bắt buộc làm pk)
   name: string; // Tên thành phố
   countryId: number; // Tham chiếu đến Country.id
+  country?: Country;
 }
 
 export interface Branch {
@@ -50,6 +51,7 @@ export interface Branch {
   address: string;
   phone: string;
   cityId: number;
+  city?: City;
 }
 
 // System
@@ -74,17 +76,25 @@ export interface PaymentType {
 // Pricing
 export interface Route {
   id: number;
+  code: string;
+  name: string;
   originCountryId: number; // Tham chiếu Country.id
+  originCountry?: Country;
   originCityId: number; // Tham chiếu City.id
+  originCity?: City;
   destinationCountryId: number; // Tham chiếu Country.id
+  destinationCountry?: Country;
   destinationCityId: number; // Tham chiếu City.id
+  destinationCity?: City;
   zoneId: number; // Tham chiếu Zone.id
+  zone?: Zone;
 }
 
 export interface Carrier {
   id: number;
   name: string;
   routeIds: number[];
+  routes?: Route[];
 }
 
 export interface InsurancePackage {
@@ -119,8 +129,12 @@ export interface PricingRule {
 export interface Price {
   id: number;
   routeId: number; // Tham chiếu Route.id
-  serviceId: number; // Tham chiếu ShippingService.id
+  route?: Route;
+  shippingServiceId: number; // Tham chiếu ShippingService.id
+  shippingService?: ShippingService;
   baseRatePerKg: number;
+  effectiveDate: string;
+  deletionDate?: string;
 }
 
 // Bảo lưu interface cũ để tránh lỗi tương thích

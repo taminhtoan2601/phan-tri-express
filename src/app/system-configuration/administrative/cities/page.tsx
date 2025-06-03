@@ -11,12 +11,12 @@ import PageContainer from '@/components/layout/page-container';
 import { Heading } from '@/components/ui/heading';
 import { Separator } from '@/components/ui/separator';
 import { IconPlus } from '@tabler/icons-react';
-import { CitiesListing } from '@/features/cities/components/cities-listing';
-import { CityForm } from '@/features/cities/components/city-form';
+import { CitiesListing } from '@/features/administrative/cities/components/cities-listing';
+import { CityForm } from '@/features/administrative/cities/components/city-form';
 import {
   DrawerProvider,
   useDrawer
-} from '@/features/cities/context/drawer-context';
+} from '@/features/administrative/cities/context/drawer-context';
 import { DataTableSkeleton } from '@/components/ui/table/data-table-skeleton';
 
 /**

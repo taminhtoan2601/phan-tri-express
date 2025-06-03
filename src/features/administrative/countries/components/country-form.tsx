@@ -11,7 +11,7 @@ import {
   SelectTrigger,
   SelectValue
 } from '@/components/ui/select';
-import { Country, Zone } from '@/types/system-configuration';
+import { Country } from '@/types/system-configuration';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { toast } from 'sonner';
 import { fakeCountries, fakeZones } from '@/constants/mock-system-config';

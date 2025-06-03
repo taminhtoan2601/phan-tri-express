@@ -189,6 +189,11 @@ export const fakeCities = {
 
     // Sử dụng dữ liệu từ file fake-cities.ts
     this.records = [...seedCities];
+    this.records.forEach((city) => {
+      city.country = fakeCountries.records.find(
+        (country) => country.id === city.countryId
+      );
+    });
   },
 
   async getAll() {
@@ -245,6 +250,11 @@ export const fakeBranches = {
     }
 
     this.records = [...seedBranches];
+    this.records.forEach((branch) => {
+      branch.city = fakeCities.records.find(
+        (city) => city.id === branch.cityId
+      );
+    });
   },
 
   async getAll() {
@@ -420,10 +430,10 @@ export const fakePaymentTypes = {
 
   initialize() {
     const paymentTypeNames = [
+      'COD',
+      'Bank Transfer',
       'Credit Card',
       'Debit Card',
-      'Bank Transfer',
-      'Cash on Delivery',
       'PayPal',
       'Crypto',
       'Apple Pay',
@@ -486,40 +496,20 @@ export const fakeCarriers = {
   records: [] as Carrier[],
 
   initialize() {
-    const carrierNames = [
-      'Express Logistics',
-      'Global Shipping',
-      'Fast Track Delivery',
-      'Air Cargo Solutions',
-      'Maritime Freight',
-      'Continental Transport',
-      'Pacific Routes',
-      'Atlantic Carriers',
-      'Speedy Delivery',
-      'Premium Freight'
-    ];
-
-    this.records = carrierNames.map((name, index) => ({
-      id: index + 1,
-      code: name
-        .split(' ')
-        .map((word) => word[0])
-        .join('')
-        .toUpperCase(),
-      name,
-      serviceLevel: ['Standard', 'Premium', 'Economy'][
-        Math.floor(Math.random() * 3)
-      ],
-      contactPerson: faker.person.fullName(),
-      phone: faker.phone.number(),
-      email: faker.internet.email(),
-      routeIds: [1, 2, 3].slice(0, Math.floor(Math.random() * 3) + 1) // 1-3 random routes
-    }));
+    if (fakeRoutes.records.length === 0) {
+      fakeRoutes.initialize();
+    }
 
     // Đồng bộ với dữ liệu từ seed nếu có
     if (seedCarriers && seedCarriers.length > 0) {
       this.records = [...seedCarriers];
     }
+
+    this.records.forEach((carrier) => {
+      carrier.routes = fakeRoutes.records.filter((route) =>
+        carrier.routeIds.includes(route.id)
+      );
+    });
   },
 
   async getAll() {
@@ -578,6 +568,21 @@ export const fakeRoutes = {
 
     // Sử dụng dữ liệu từ file fake-routes.ts
     this.records = [...seedRoutes];
+    this.records.forEach((route) => {
+      route.zone = fakeZones.records.find((zone) => zone.id === route.zoneId);
+      route.originCountry = fakeCountries.records.find(
+        (country) => country.id === route.originCountryId
+      );
+      route.originCity = fakeCities.records.find(
+        (city) => city.id === route.originCityId
+      );
+      route.destinationCountry = fakeCountries.records.find(
+        (country) => country.id === route.destinationCountryId
+      );
+      route.destinationCity = fakeCities.records.find(
+        (city) => city.id === route.destinationCityId
+      );
+    });
   },
 
   async getAll() {
@@ -796,6 +801,14 @@ export const fakePrices = {
 
     // Sử dụng dữ liệu từ file fake-prices.ts
     this.records = [...seedPrices];
+    this.records.forEach((price) => {
+      price.route = fakeRoutes.records.find(
+        (route) => route.id === price.routeId
+      );
+      price.shippingService = fakeShippingServices.records.find(
+        (service) => service.id === price.shippingServiceId
+      );
+    });
   },
 
   async getAll() {

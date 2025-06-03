@@ -14,7 +14,8 @@ import {
   Route,
   ShippingType,
   ShippingService,
-  Zone
+  Zone,
+  Price
 } from '@/types/system-configuration';
 
 import {
@@ -26,6 +27,7 @@ import {
   fakeInsurancePackages,
   fakePaymentTypes,
   fakePriceConfigurations,
+  fakePrices,
   fakeRoutes,
   fakeShippingServices,
   fakeShippingTypes,
@@ -278,23 +280,21 @@ export async function deleteInsurancePackage(id: number): Promise<void> {
   return fakeInsurancePackages.delete(id);
 }
 
-export async function getPriceConfigurations(): Promise<PriceConfiguration[]> {
-  return fakePriceConfigurations.getAll();
+export async function getPrices(): Promise<Price[]> {
+  return fakePrices.getAll();
 }
 
-export async function createPriceConfiguration(
-  priceConfig: Omit<PriceConfiguration, 'id'>
-): Promise<PriceConfiguration> {
-  return fakePriceConfigurations.create(priceConfig);
+export async function createPrice(price: Omit<Price, 'id'>): Promise<Price> {
+  return fakePrices.create(price);
 }
 
-export async function updatePriceConfiguration(
+export async function updatePrice(
   id: number,
-  priceConfig: Partial<PriceConfiguration>
-): Promise<PriceConfiguration> {
-  return fakePriceConfigurations.update(id, priceConfig);
+  price: Partial<Price>
+): Promise<Price> {
+  return fakePrices.update(id, price);
 }
 
-export async function deletePriceConfiguration(id: number): Promise<void> {
-  return fakePriceConfigurations.delete(id);
+export async function deletePrice(id: number): Promise<void> {
+  return fakePrices.delete(id);
 }

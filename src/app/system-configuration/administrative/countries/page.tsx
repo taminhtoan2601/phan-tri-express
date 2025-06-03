@@ -5,9 +5,9 @@
 'use client';
 
 import { Suspense } from 'react';
-import { CountriesListing } from '@/features/countries/components';
+import { CountriesListing } from '@/features/administrative/countries/components';
 import { DataDrawer } from '@/components/system-configuration/data-table';
-import { CountryForm } from '@/features/countries/components/country-form';
+import { CountryForm } from '@/features/administrative/countries/components/country-form';
 import PageContainer from '@/components/layout/page-container';
 import { DataTableSkeleton } from '@/components/ui/table/data-table-skeleton';
 import { Separator } from '@/components/ui/separator';
@@ -19,7 +19,7 @@ import { Heading } from '@/components/ui/heading';
 import {
   DrawerProvider,
   useDrawer
-} from '@/features/countries/context/drawer-context';
+} from '@/features/administrative/countries/context/drawer-context';
 
 /**
  * CountriesContent component - content inside the DrawerProvider

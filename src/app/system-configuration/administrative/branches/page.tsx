@@ -5,13 +5,13 @@
  * Manages branch offices and locations using the DataTable architecture
  */
 
-import { DrawerProvider } from '@/features/branches/context/drawer-context';
-import { useDrawer } from '@/features/branches/context/drawer-context';
+import { DrawerProvider } from '@/features/administrative/branches/context/drawer-context';
+import { useDrawer } from '@/features/administrative/branches/context/drawer-context';
 import { Separator } from '@/components/ui/separator';
 import { DataTableSkeleton } from '@/components/ui/table/data-table-skeleton';
-import { BranchForm } from '@/features/branches/components/branch-form';
+import { BranchForm } from '@/features/administrative/branches/components/branch-form';
 import { DataDrawer } from '@/components/system-configuration/data-table';
-import { BranchesListing } from '@/features/branches/components/branches-listing';
+import { BranchesListing } from '@/features/administrative/branches/components/branches-listing';
 import { Heading } from '@/components/ui/heading';
 import { Button } from '@/components/ui/button';
 import { IconPlus } from '@tabler/icons-react';

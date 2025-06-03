@@ -12,12 +12,12 @@ import { Heading } from '@/components/ui/heading';
 import { Separator } from '@/components/ui/separator';
 import { DataTableSkeleton } from '@/components/ui/table/data-table-skeleton';
 import { IconPlus } from '@tabler/icons-react';
-import { ZonesListing } from '@/features/zones/components/zones-listing';
-import { ZoneForm } from '@/features/zones/components/zone-form';
+import { ZonesListing } from '@/features/administrative/zones/components/zones-listing';
+import { ZoneForm } from '@/features/administrative/zones/components/zone-form';
 import {
   DrawerProvider,
   useDrawer
-} from '@/features/zones/context/drawer-context';
+} from '@/features/administrative/zones/context/drawer-context';
 
 /**
  * Zones page component with drawer context
