@@ -278,7 +278,19 @@ export interface Permission { id:number; key:string; description:string; }
 export interface User { id:number; fullName:string; email:string; roles:RoleKey[]; status:'active'|'inactive'; }
 
 // ✦ Customer
-export interface Customer { id:number; name:string; phone:string; note?:string; countryId:string; city:string; postal:string; address:string; }
+export interface Customer { 
+  id:number; 
+  name:string; 
+  phone:string; 
+  email:string; 
+  note?:string; 
+  countryId:string; 
+  country:Country;
+  cityId:string; 
+  city:City;
+  postal:string; 
+  address:string; 
+}
 
 // ✦ Shipping
 export enum ShippingStatus {
@@ -290,22 +302,58 @@ export enum ShippingStatus {
   InTransit      = 'in_transit',
   Delivered      = 'delivered',
 }
-export interface ShippingHistory { id:number; at:string; userId:string; action:string; note?:string; }
-export interface GoodsItem { id:number; commodityTypeId:string; description:string; length:number; width:number; height:number; volume:number; weight:number; quantity:number; unitPrice:number; qualityNote?:string; }
-export interface Surcharge { id:number; reason:string; amount:number; }
-export interface InsuranceDetail { packageId:string; declaredValue:number; fee:number; }
+export interface ShippingHistory { 
+  id:number; 
+  at:string; 
+  userId:string; 
+  action:string; 
+  note?:string; 
+}
+export interface GoodsItem { 
+  id:number; 
+  commodityTypeId:number; 
+  commodityType:CommodityType; 
+  description:string; 
+  length:number; 
+  width:number; 
+  height:number; 
+  volume:number; 
+  weight:number; 
+  quantity:number; 
+  unitPrice:number; 
+  qualityNote?:string; 
+}
+
+export interface Surcharge { 
+  id:number; 
+  reason:string; 
+  amount:number; 
+}
+export interface InsuranceDetail { 
+  packageId:number; 
+  package:InsurancePackage; 
+  declaredValue:number; 
+  fee:number; 
+}
 export interface ShippingOrder {
   id:number;
   createdAt:string;
-  officeId:string;
+  branchId:number;
+  branch:Branch;
   creatorId:string;
-  transportTypeId:string;
-  paymentTypeId:string;
+  shippingTypeId:number;
+  shippingType:ShippingType;
+  paymentTypeId:number;
+  paymentType:PaymentType;
   branchDiscount:number;
+  senderId: number;
   sender:Customer;
+  receiverId: number;
   receiver:Customer;
-  routeId:string;
-  carrierId:string;
+  routeId:number;
+  route:Route;
+  carrierId:number;
+  carrier:Carrier;
   goods:GoodsItem[];
   surcharge?:Surcharge[];
   insurance?:InsuranceDetail;

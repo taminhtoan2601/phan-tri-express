@@ -21,14 +21,14 @@ export const navItems: NavItem[] = [
     shortcut: ['d', 'd'],
     items: [] // Empty array as there are no child items for Dashboard
   },
-  {
-    title: 'Product',
-    url: '/dashboard/product',
-    icon: 'product',
-    shortcut: ['p', 'p'],
-    isActive: false,
-    items: [] // No child items
-  },
+  // {
+  //   title: 'Product',
+  //   url: '/dashboard/product',
+  //   icon: 'product',
+  //   shortcut: ['p', 'p'],
+  //   isActive: false,
+  //   items: [] // No child items
+  // },
   // {
   //   title: 'Kanban',
   //   url: '/dashboard/kanban',
@@ -113,12 +113,12 @@ export const navItems: NavItem[] = [
           },
           {
             title: 'Insurance Packages',
-            url: '/system-configuration/insurance-packages',
+            url: '/system-configuration/pricing/insurance-packages',
             shortcut: ['i', 'p']
           },
           {
             title: 'Price Configurations',
-            url: '/system-configuration/price-configurations',
+            url: '/system-configuration/pricing/prices',
             shortcut: ['p', 'c']
           }
         ]

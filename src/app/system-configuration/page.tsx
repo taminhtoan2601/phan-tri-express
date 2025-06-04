@@ -70,37 +70,43 @@ export default function SystemConfigurationPage() {
           />
         </SectionCard>
 
+        {/* System Section */}
+        <SectionCard
+          title='System'
+          description='Core system settings'
+          icon={<Settings className='h-6 w-6' />}
+        >
+          <ConfigLink
+            href='/system-configuration/system/commodity-types'
+            title='Commodity Types'
+            icon={<PackageOpen className='h-5 w-5' />}
+            description='Configure types of goods and commodities'
+          />
+          <ConfigLink
+            href='/system-configuration/system/shipping-types'
+            title='Shipping Types'
+            icon={<PackageOpen className='h-5 w-5' />}
+            description='Configure shipping types'
+          />
+          <ConfigLink
+            href='/system-configuration/system/shipping-services'
+            title='Shipping Services'
+            icon={<PackageOpen className='h-5 w-5' />}
+            description='Configure shipping services'
+          />
+          <ConfigLink
+            href='/system-configuration/system/payment-types'
+            title='Payment Types'
+            icon={<PackageOpen className='h-5 w-5' />}
+            description='Configure payment types'
+          />
+        </SectionCard>
+
         {/* Pricing Section */}
         <SectionCard
           title='Pricing'
           description='Rates, services and pricing rules'
           icon={<CircleDollarSign className='h-6 w-6' />}
-        >
-          <ConfigLink
-            href='/system-configuration/pricing/shipping-services'
-            title='Shipping Services'
-            icon={<Truck className='h-5 w-5' />}
-            description='Configure shipping service levels and options'
-          />
-          <ConfigLink
-            href='/system-configuration/pricing/pricing-rules'
-            title='Pricing Rules'
-            icon={<Scale className='h-5 w-5' />}
-            description='Set up weight calculations and pricing formulas'
-          />
-          <ConfigLink
-            href='/system-configuration/pricing/prices'
-            title='Prices'
-            icon={<CircleDollarSign className='h-5 w-5' />}
-            description='Manage base rates for routes and services'
-          />
-        </SectionCard>
-
-        {/* Logistics Section */}
-        <SectionCard
-          title='Logistics'
-          description='Routes and shipment settings'
-          icon={<TruckIcon className='h-6 w-6' />}
         >
           <ConfigLink
             href='/system-configuration/pricing/routes'
@@ -115,24 +121,16 @@ export default function SystemConfigurationPage() {
             description='Manage third-party carriers and services'
           />
           <ConfigLink
-            href='/system-configuration/system/commodity-types'
-            title='Commodity Types'
+            href='/system-configuration/pricing/insurance-packages'
+            title='Insurance Packages'
             icon={<PackageOpen className='h-5 w-5' />}
-            description='Configure types of goods and commodities'
+            description='Configure insurance packages and coverage options'
           />
-        </SectionCard>
-
-        {/* System Section */}
-        <SectionCard
-          title='System'
-          description='Core system settings'
-          icon={<Settings className='h-6 w-6' />}
-        >
           <ConfigLink
-            href='/system-configuration/office'
-            title='Office Settings'
-            icon={<Building2 className='h-5 w-5' />}
-            description='Configure office-specific settings'
+            href='/system-configuration/pricing/prices'
+            title='Prices'
+            icon={<CircleDollarSign className='h-5 w-5' />}
+            description='Manage base rates for routes and services'
           />
         </SectionCard>
       </div>

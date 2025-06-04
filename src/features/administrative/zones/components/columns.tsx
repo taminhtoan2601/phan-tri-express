@@ -1,13 +1,5 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu';
 import { DataTableColumnHeader } from '@/components/ui/table/data-table-column-header';
 import { Zone } from '@/types/system-configuration';
 import { IconBuildingArch } from '@tabler/icons-react';
@@ -40,8 +32,7 @@ export const columns: ColumnDef<Zone>[] = [
     enableColumnFilter: true,
     meta: {
       label: 'name',
-      placeholder: 'Search by name...',
-      icon: IconBuildingArch
+      placeholder: 'Search by name...'
     }
   },
   {

@@ -19,15 +19,114 @@ const routeMapping: Record<string, BreadcrumbItem[]> = {
     { title: 'Dashboard', link: '/dashboard' },
     { title: 'Product', link: '/dashboard/product' }
   ],
-  '/system-configuration/office': [
+  '/system-configuration': [
     { title: 'Dashboard', link: '/dashboard' },
-    { title: 'System Configuration', link: '/system-configuration' },
-    { title: 'Office', link: '/system-configuration/office' }
+    { title: 'System Configuration', link: '/system-configuration' }
   ],
-  '/system-configuration/profile': [
+  '/system-configuration/administrative': [
     { title: 'Dashboard', link: '/dashboard' },
     { title: 'System Configuration', link: '/system-configuration' },
-    { title: 'Profile', link: '/system-configuration/profile' }
+    { title: 'Administrative', link: '/system-configuration/administrative' }
+  ],
+  '/system-configuration/administrative/zones': [
+    { title: 'Dashboard', link: '/dashboard' },
+    { title: 'System Configuration', link: '/system-configuration' },
+    { title: 'Administrative', link: '/system-configuration/administrative' },
+    { title: 'Zones', link: '/system-configuration/administrative/zones' }
+  ],
+  '/system-configuration/administrative/countries': [
+    { title: 'Dashboard', link: '/dashboard' },
+    { title: 'System Configuration', link: '/system-configuration' },
+    { title: 'Administrative', link: '/system-configuration/administrative' },
+    {
+      title: 'Countries',
+      link: '/system-configuration/administrative/countries'
+    }
+  ],
+  '/system-configuration/administrative/cities': [
+    { title: 'Dashboard', link: '/dashboard' },
+    { title: 'System Configuration', link: '/system-configuration' },
+    { title: 'Administrative', link: '/system-configuration/administrative' },
+    { title: 'Cities', link: '/system-configuration/administrative/cities' }
+  ],
+  '/system-configuration/administrative/branches': [
+    { title: 'Dashboard', link: '/dashboard' },
+    { title: 'System Configuration', link: '/system-configuration' },
+    { title: 'Administrative', link: '/system-configuration/administrative' },
+    { title: 'Branches', link: '/system-configuration/administrative/branches' }
+  ],
+  '/system-configuration/system': [
+    { title: 'Dashboard', link: '/dashboard' },
+    { title: 'System Configuration', link: '/system-configuration' },
+    { title: 'System', link: '/system-configuration/system' }
+  ],
+  '/system-configuration/system/shipping-services': [
+    { title: 'Dashboard', link: '/dashboard' },
+    { title: 'System Configuration', link: '/system-configuration' },
+    { title: 'System', link: '/system-configuration/system' },
+    {
+      title: 'Shipping Services',
+      link: '/system-configuration/system/shipping-services'
+    }
+  ],
+  '/system-configuration/system/commodity-types': [
+    { title: 'Dashboard', link: '/dashboard' },
+    { title: 'System Configuration', link: '/system-configuration' },
+    { title: 'System', link: '/system-configuration/system' },
+    {
+      title: 'Commodity Types',
+      link: '/system-configuration/system/commodity-types'
+    }
+  ],
+  '/system-configuration/system/shipping-types': [
+    { title: 'Dashboard', link: '/dashboard' },
+    { title: 'System Configuration', link: '/system-configuration' },
+    { title: 'System', link: '/system-configuration/system' },
+    {
+      title: 'Shipping Types',
+      link: '/system-configuration/system/shipping-types'
+    }
+  ],
+  '/system-configuration/system/payment-types': [
+    { title: 'Dashboard', link: '/dashboard' },
+    { title: 'System Configuration', link: '/system-configuration' },
+    { title: 'System', link: '/system-configuration/system' },
+    {
+      title: 'Payment Types',
+      link: '/system-configuration/system/payment-types'
+    }
+  ],
+  '/system-configuration/pricing': [
+    { title: 'Dashboard', link: '/dashboard' },
+    { title: 'System Configuration', link: '/system-configuration' },
+    { title: 'Pricing', link: '/system-configuration/pricing' }
+  ],
+  '/system-configuration/pricing/routes': [
+    { title: 'Dashboard', link: '/dashboard' },
+    { title: 'System Configuration', link: '/system-configuration' },
+    { title: 'Pricing', link: '/system-configuration/pricing' },
+    { title: 'Routes', link: '/system-configuration/pricing/routes' }
+  ],
+  '/system-configuration/pricing/insurance-packages': [
+    { title: 'Dashboard', link: '/dashboard' },
+    { title: 'System Configuration', link: '/system-configuration' },
+    { title: 'Pricing', link: '/system-configuration/pricing' },
+    {
+      title: 'Insurance Packages',
+      link: '/system-configuration/pricing/insurance-packages'
+    }
+  ],
+  '/system-configuration/pricing/carriers': [
+    { title: 'Dashboard', link: '/dashboard' },
+    { title: 'System Configuration', link: '/system-configuration' },
+    { title: 'Pricing', link: '/system-configuration/pricing' },
+    { title: 'Carriers', link: '/system-configuration/pricing/carriers' }
+  ],
+  '/system-configuration/pricing/prices': [
+    { title: 'Dashboard', link: '/dashboard' },
+    { title: 'System Configuration', link: '/system-configuration' },
+    { title: 'Pricing', link: '/system-configuration/pricing' },
+    { title: 'Prices', link: '/system-configuration/pricing/prices' }
   ]
 };
 

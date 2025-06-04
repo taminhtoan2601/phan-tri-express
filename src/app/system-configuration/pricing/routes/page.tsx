@@ -17,11 +17,10 @@ import {
   DrawerProvider,
   useDrawer
 } from '@/features/pricing/routes/context/drawer-context';
-import { InsurancePackageForm } from '@/features/pricing/insurance-packages/components/insurance-packages-form';
 import { RouteForm } from '@/features/pricing/routes/components';
 
 /**
- * Insurance Packages page component with drawer context
+ * Routes page component with drawer context
  */
 function RoutesPageContent() {
   const { isOpen, route, openDrawer, closeDrawer } = useDrawer();
