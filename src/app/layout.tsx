@@ -85,12 +85,6 @@ export default async function RootLayout({
           </ThemeProvider>
         </NuqsAdapter>
       </body>
-      <footer className='bg-background text-muted-foreground fixed right-0 bottom-0 left-0 w-full p-5 text-center text-sm'>
-        <p>
-          Phan Tri Express &copy; {new Date().getFullYear()} @Bản quyền thuộc về
-          Phan Tri Express
-        </p>
-      </footer>
     </html>
   );
 }
