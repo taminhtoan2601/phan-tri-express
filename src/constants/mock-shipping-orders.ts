@@ -2,12 +2,10 @@
 // 🛑 Mock API cho System Configuration Module
 ////////////////////////////////////////////////////////////////////////////////
 
-import { faker } from '@faker-js/faker';
 import { delay } from './mock-api';
 
 // Import seed data from data directory
 import { shippingOrders as seedShippingOrders } from '@/data';
-import { Customer } from '@/types/customer';
 import {
   fakeCountries,
   fakeCities,
@@ -17,25 +15,24 @@ import {
   fakeCarriers,
   fakeInsurancePackages,
   fakePrices,
-  fakeRoutes,
-  fakeShippingServices,
   fakeShippingTypes,
+  fakeShippingServices,
+  fakeRoutes,
   fakeSurchargeTypes
 } from './mock-system-config';
-import { ShippingOrder } from '@/types/shipping-order';
 import {
   Branch,
   Carrier,
-  City,
   CommodityType,
-  Country,
   InsurancePackage,
   PaymentType,
-  Route,
-  ShippingService,
   ShippingType,
-  SurchargeType
+  ShippingService,
+  Route,
+  SurchargeType,
+  City
 } from '@/types/system-configuration';
+import { ShippingOrder } from '@/types/shipping-order';
 // Helpers
 const generateId = (): number => Math.floor(Math.random() * 10000) + 1;
 const getRandomItem = <T>(array: T[]): T =>

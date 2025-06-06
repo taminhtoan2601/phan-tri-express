@@ -95,7 +95,6 @@ export function ShippingOrderCard({ shippingOrder, isOverlay }: Props) {
 
   const handleAction = (actionId: string) => {
     // TODO: call mutation / navigate …
-    console.log('[ACTION]', actionId, 'on order', shippingOrder.id);
   };
 
   return (

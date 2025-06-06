@@ -119,7 +119,7 @@ export function DataTable<T extends { id: number | string }>({
 /**
  * Props for the DataDrawer component
  */
-interface DataDrawerProps<T> {
+interface DataDrawerProps {
   isOpen: boolean;
   onClose: () => void;
   title: string;
@@ -129,12 +129,12 @@ interface DataDrawerProps<T> {
 /**
  * Generic drawer component for editing system configuration data
  */
-export function DataDrawer<T>({
+export function DataDrawer({
   isOpen,
   onClose,
   title,
   children
-}: DataDrawerProps<T>) {
+}: DataDrawerProps) {
   // Chỉ render drawer khi isOpen = true
   if (!isOpen) {
     return null;

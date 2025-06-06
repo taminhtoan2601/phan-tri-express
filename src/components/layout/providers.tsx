@@ -3,9 +3,8 @@ import { ClerkProvider } from '@clerk/nextjs';
 import { dark } from '@clerk/themes';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useTheme } from 'next-themes';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { ActiveThemeProvider } from '../active-theme';
-import { startMockServer, stopMockServer } from '@/lib/mock-server';
 
 export default function Providers({
   activeThemeValue,

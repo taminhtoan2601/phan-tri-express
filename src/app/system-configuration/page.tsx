@@ -16,8 +16,6 @@ import {
   Building2,
   PackageOpen,
   Truck,
-  TruckIcon,
-  Scale,
   CircleDollarSign,
   Settings
 } from 'lucide-react';

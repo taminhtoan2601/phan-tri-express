@@ -19,7 +19,7 @@ import { IconPlus } from '@tabler/icons-react';
 import { Suspense } from 'react';
 import PageContainer from '@/components/layout/page-container';
 
-export function BranchesContent() {
+function BranchesContent() {
   const { isOpen, branch, openDrawer, closeDrawer } = useDrawer();
 
   const handleAddNewBranch = () => {

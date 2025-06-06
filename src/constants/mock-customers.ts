@@ -2,19 +2,15 @@
 // 🛑 Mock API cho System Configuration Module
 ////////////////////////////////////////////////////////////////////////////////
 
-import { faker } from '@faker-js/faker';
-import { City, Country } from '@/types/system-configuration';
+import { Customer } from '@/types/customer';
 import { delay } from './mock-api';
 
 // Import seed data from data directory
 import { customers as seedCustomers } from '@/data';
-import { Customer } from '@/types/customer';
 import { fakeCountries, fakeCities } from './mock-system-config';
 
 // Helpers
 const generateId = (): number => Math.floor(Math.random() * 10000) + 1;
-const getRandomItem = <T>(array: T[]): T =>
-  array[Math.floor(Math.random() * array.length)];
 
 // ZONES
 export const fakeCustomers = {

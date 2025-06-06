@@ -33,8 +33,7 @@ import {
   shippingServices as seedShippingServices, // 1
   surchargeTypes as seedSurchargeTypes,
   carriers as seedCarriers,
-  insurancePackages as seedInsurancePackages,
-  shippingServices
+  insurancePackages as seedInsurancePackages
 } from '@/data';
 
 // Helpers

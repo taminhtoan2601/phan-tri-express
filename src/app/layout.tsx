@@ -9,7 +9,7 @@ import NextTopLoader from 'nextjs-toploader';
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
 import './globals.css';
 import './theme.css';
-import { Inter, Noto_Sans } from 'next/font/google';
+import { Inter } from 'next/font/google';
 
 // đổi sang Inter static
 const inter = Inter({

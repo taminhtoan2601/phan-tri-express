@@ -6,7 +6,6 @@ import { Building, Globe, MapPin } from 'lucide-react';
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle

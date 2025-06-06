@@ -503,7 +503,6 @@ export function CreateShippingOrderForm() {
   }, [goods, surcharges, insurance, discount]);
 
   function onSubmit(data: CreateShippingOrderFormValues) {
-    console.log('Form submitted data:', data);
     // Transform data to match API payload if necessary
     const payload = {
       ...data,
@@ -516,7 +515,6 @@ export function CreateShippingOrderForm() {
       }))
       // insurance: data.insurance ? { ...data.insurance, fee: calculateInsuranceFee(...) } : undefined,
     };
-    console.log('Payload to send to API:', payload);
     // Replace with actual API call: mutation.mutate(payload)
     toast.success('Đơn hàng đã được lưu nháp.', {
       description: 'Khởi tạo đơn hàng thành công.'
@@ -525,9 +523,7 @@ export function CreateShippingOrderForm() {
     form.reset(); // Reset form after successful submission
     router.push('/shipping-orders/list');
   }
-  function onInvalid(errors: FieldErrors<CreateShippingOrderFormValues>) {
-    console.log('❌ Có lỗi, không submit', errors);
-  }
+  function onInvalid(errors: FieldErrors<CreateShippingOrderFormValues>) {}
   return (
     <Form {...form}>
       <form
@@ -823,8 +819,6 @@ export function CreateShippingOrderForm() {
                             setSenderCityInput('');
                             form.trigger('senderInfo');
                           }
-                          console.log(form.getValues());
-                          console.log(groupedCities);
                         }}
                         value={field.value?.toString() ?? ''}
                       >

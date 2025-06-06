@@ -33,10 +33,8 @@ import { navItems } from '@/constants/data';
 import { useMediaQuery } from '@/hooks/use-media-query';
 import { useUser } from '@clerk/nextjs';
 import {
-  IconBell,
   IconChevronRight,
   IconChevronsDown,
-  IconCreditCard,
   IconLogout,
   IconPhotoUp,
   IconUserCircle
@@ -63,8 +61,9 @@ export default function AppSidebar() {
   const { isOpen } = useMediaQuery();
   const { user } = useUser();
   const router = useRouter();
-  const handleSwitchTenant = (_tenantId: string) => {
+  const handleSwitchTenant = (tenantId: string) => {
     // Tenant switching functionality would be implemented here
+    console.log(tenantId);
   };
 
   const activeTenant = tenants[0];

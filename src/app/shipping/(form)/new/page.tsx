@@ -1,6 +1,5 @@
 import PageContainer from '@/components/layout/page-container';
 import { CreateShippingOrderForm } from '@/features/shipping-orders/components/CreateShippingOrderForm';
-import Link from 'next/link';
 
 // Placeholder for Breadcrumb component
 

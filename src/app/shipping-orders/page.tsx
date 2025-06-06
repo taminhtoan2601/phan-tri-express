@@ -10,30 +10,6 @@ import {
 import { PlusCircle } from 'lucide-react'; // Assuming lucide-react for icons
 import PageContainer from '@/components/layout/page-container';
 
-// Placeholder for Breadcrumb component
-const Breadcrumb = ({
-  items
-}: {
-  items: { label: string; href?: string }[];
-}) => (
-  <nav aria-label='breadcrumb' className='mb-4'>
-    <ol className='text-muted-foreground flex space-x-2 text-sm'>
-      {items.map((item, index) => (
-        <li key={index} className='flex items-center'>
-          {item.href ? (
-            <Link href={item.href} className='hover:underline'>
-              {item.label}
-            </Link>
-          ) : (
-            <span>{item.label}</span>
-          )}
-          {index < items.length - 1 && <span className='mx-2'>/</span>}
-        </li>
-      ))}
-    </ol>
-  </nav>
-);
-
 interface OverviewCardProps {
   title: string;
   description: string;

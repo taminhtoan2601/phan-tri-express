@@ -165,8 +165,6 @@ export const startMockServer = () => {
     onUnhandledRequest:
       process.env.NODE_ENV === 'development' ? 'warn' : 'bypass'
   });
-
-  console.log(' Mock API server started');
 };
 
 /**
@@ -177,6 +175,5 @@ export const stopMockServer = () => {
 
   if (worker) {
     worker.stop();
-    console.log(' Mock API server stopped');
   }
 };
