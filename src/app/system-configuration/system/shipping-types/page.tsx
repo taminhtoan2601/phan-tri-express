@@ -33,12 +33,12 @@ function ShippingTypesPageContent() {
       >
         <div className='flex items-start justify-between'>
           <Heading
-            title='Shipping Types'
-            description='Manage shipping types used in shipping orders'
+            title='Loại Giao Hàng'
+            description='Quản lý các loại giao hàng được sử dụng trong các đơn hàng giao hàng'
           />
           <Button onClick={() => openDrawer()}>
             <IconPlus className='mr-2 h-4 w-4' />
-            Add Shipping Type
+            Thêm Loại Giao Hàng
           </Button>
         </div>
         <Separator />
@@ -53,7 +53,9 @@ function ShippingTypesPageContent() {
       </div>
 
       <DataDrawer
-        title={shippingType ? 'Edit Shipping Type' : 'Add Shipping Type'}
+        title={
+          shippingType ? 'Điều chỉnh Loại Giao Hàng' : 'Thêm Loại Giao Hàng'
+        }
         isOpen={isOpen}
         onClose={closeDrawer}
       >

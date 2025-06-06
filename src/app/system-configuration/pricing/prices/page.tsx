@@ -1,5 +1,5 @@
 /**
- * Zones Configuration Page
+ * Giá Configuration Page
  * Manages shipping zones used in the pricing system
  */
 'use client';
@@ -32,13 +32,10 @@ function PricesPageContent() {
         style={{ minHeight: 'calc(100vh - 10rem)' }}
       >
         <div className='flex items-start justify-between'>
-          <Heading
-            title='Prices'
-            description='Manage prices used in shipping orders'
-          />
+          <Heading title='Giá' description='Quản lý giá trong hệ thống' />
           <Button onClick={() => openDrawer()}>
             <IconPlus className='mr-2 h-4 w-4' />
-            Add Price
+            Thêm giá
           </Button>
         </div>
         <Separator />
@@ -53,7 +50,7 @@ function PricesPageContent() {
       </div>
 
       <DataDrawer
-        title={price ? 'Edit Price' : 'Add Price'}
+        title={price ? 'Sửa Giá' : 'Thêm Giá'}
         isOpen={isOpen}
         onClose={closeDrawer}
       >

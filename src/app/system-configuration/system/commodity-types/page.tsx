@@ -33,12 +33,12 @@ function CommodityTypesPageContent() {
       >
         <div className='flex items-start justify-between'>
           <Heading
-            title='Commodity Types'
-            description='Manage commodity types used in shipping orders'
+            title='Loại Hàng'
+            description='Quản lý các loại hàng được sử dụng trong các đơn hàng giao hàng'
           />
           <Button onClick={() => openDrawer()}>
             <IconPlus className='mr-2 h-4 w-4' />
-            Add Commodity Type
+            Thêm Loại Hàng
           </Button>
         </div>
         <Separator />
@@ -53,7 +53,7 @@ function CommodityTypesPageContent() {
       </div>
 
       <DataDrawer
-        title={commodityType ? 'Edit Commodity Type' : 'Add Commodity Type'}
+        title={commodityType ? 'Điều chỉnh Loại Hàng' : 'Thêm Loại Hàng'}
         isOpen={isOpen}
         onClose={closeDrawer}
       >

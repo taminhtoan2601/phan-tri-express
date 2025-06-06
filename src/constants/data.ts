@@ -14,11 +14,19 @@ export type Product = {
 //Info: The following data is used for the sidebar navigation and Cmd K bar.
 export const navItems: NavItem[] = [
   {
-    title: 'Dashboard',
+    title: 'Bảng Theo Dõi',
     url: '/dashboard/overview',
     icon: 'dashboard',
     isActive: false,
     shortcut: ['d', 'd'],
+    items: [] // Empty array as there are no child items for Dashboard
+  },
+  {
+    title: 'Đơn Vận Chuyển',
+    url: '/shipping-orders',
+    icon: 'package',
+    shortcut: ['s', 'o'],
+    isActive: false,
     items: [] // Empty array as there are no child items for Dashboard
   },
   // {
@@ -38,7 +46,7 @@ export const navItems: NavItem[] = [
   //   items: [] // No child items
   // },
   {
-    title: 'System Configuration',
+    title: 'Cấu Hình Hệ Thống',
     url: '#',
     icon: 'settingsCog',
     shortcut: ['s', 's'],
@@ -46,22 +54,22 @@ export const navItems: NavItem[] = [
     items: [
       // Administrative Section
       {
-        title: 'Administrative',
+        title: 'Quản Lý Hành Chính',
         url: '/system-configuration/administrative',
         icon: 'office',
         items: [
           {
-            title: 'Countries',
+            title: 'Quốc Gia',
             url: '/system-configuration/administrative/countries',
             shortcut: ['c', 'o']
           },
           {
-            title: 'Branches',
+            title: 'Chi Nhánh',
             url: '/system-configuration/administrative/branches',
             shortcut: ['b', 'r']
           },
           {
-            title: 'Zones',
+            title: 'Khu Vực',
             url: '/system-configuration/administrative/zones',
             shortcut: ['z', 'n']
           }
@@ -69,55 +77,55 @@ export const navItems: NavItem[] = [
       },
       // System Section
       {
-        title: 'System',
+        title: 'Hệ Thống',
         url: '/system-configuration/system',
         icon: 'settings',
         items: [
           {
-            title: 'Commodity Types',
+            title: 'Loại Hàng',
             url: '/system-configuration/system/commodity-types',
             shortcut: ['c', 't']
           },
           {
-            title: 'Shipping Types',
+            title: 'Phương Thức Giao Hàng',
             url: '/system-configuration/system/shipping-types',
             shortcut: ['s', 't']
           },
           {
-            title: 'Payment Types',
+            title: 'Phương Thức Thanh Toán',
             url: '/system-configuration/system/payment-types',
             shortcut: ['p', 't']
           },
           {
-            title: 'Insurance Packages',
-            url: '/system-configuration/system/insurance-packages',
-            shortcut: ['i', 'p']
+            title: 'Dịch Vụ Giao Hàng',
+            url: '/system-configuration/system/shipping-services',
+            shortcut: ['p', 't']
           }
         ]
       },
       // Pricing Section
       {
-        title: 'Pricing',
+        title: 'Giá',
         url: '/system-configuration/pricing',
         icon: 'billing',
         items: [
           {
-            title: 'Routes',
+            title: 'Tuyến Vận Chuyển',
             url: '/system-configuration/pricing/routes',
             shortcut: ['r', 't']
           },
           {
-            title: 'Carriers',
+            title: 'Đơn Vị Vận Chuyển',
             url: '/system-configuration/pricing/carriers',
             shortcut: ['c', 'a']
           },
           {
-            title: 'Insurance Packages',
+            title: 'Bộ Phí Bảo Hiểm',
             url: '/system-configuration/pricing/insurance-packages',
             shortcut: ['i', 'p']
           },
           {
-            title: 'Price Configurations',
+            title: 'Cấu Hình Giá',
             url: '/system-configuration/pricing/prices',
             shortcut: ['p', 'c']
           }

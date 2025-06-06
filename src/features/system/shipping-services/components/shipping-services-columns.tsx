@@ -26,7 +26,7 @@ export const columns: ColumnDef<ShippingService>[] = [
     id: 'name',
     accessorKey: 'name',
     header: ({ column }: { column: Column<ShippingService, unknown> }) => (
-      <DataTableColumnHeader column={column} title='Name' />
+      <DataTableColumnHeader column={column} title='Tên' />
     ),
     cell: ({ row }) => (
       <div className='font-medium uppercase'>{row.getValue('name')}</div>
@@ -34,8 +34,8 @@ export const columns: ColumnDef<ShippingService>[] = [
     enableSorting: true,
     enableColumnFilter: true,
     meta: {
-      label: 'Name',
-      placeholder: 'Search by name...',
+      label: 'Tên',
+      placeholder: 'Tìm kiếm theo tên...',
       variant: 'text',
       icon: Text
     }
@@ -44,14 +44,17 @@ export const columns: ColumnDef<ShippingService>[] = [
     id: 'transitTimeDays',
     accessorKey: 'transitTimeDays',
     header: ({ column }: { column: Column<ShippingService, unknown> }) => (
-      <DataTableColumnHeader column={column} title='Transit Time (Days)' />
+      <DataTableColumnHeader
+        column={column}
+        title='Thời Gian Vận Chuyển (Ngày)'
+      />
     ),
     cell: ({ row }) => <div>{row.getValue<number>('transitTimeDays')}</div>,
     enableSorting: true,
     enableColumnFilter: true,
     meta: {
-      label: 'Transit Time (Days)',
-      placeholder: 'Search by transit time...',
+      label: 'Thời Gian Vận Chuyển (Ngày)',
+      placeholder: 'Tìm kiếm theo thời gian vận chuyển...',
       variant: 'number',
       icon: Globe
     }
@@ -61,14 +64,14 @@ export const columns: ColumnDef<ShippingService>[] = [
     id: 'multiplier',
     accessorKey: 'multiplier',
     header: ({ column }: { column: Column<ShippingService, unknown> }) => (
-      <DataTableColumnHeader column={column} title='Multiplier' />
+      <DataTableColumnHeader column={column} title='Hệ Số Nhân' />
     ),
     cell: ({ row }) => <div>{row.getValue<number>('multiplier')}</div>,
     enableSorting: true,
     enableColumnFilter: true,
     meta: {
-      label: 'Multiplier',
-      placeholder: 'Search by multiplier...',
+      label: 'Hệ Số Nhân',
+      placeholder: 'Tìm kiếm theo hệ số nhân...',
       variant: 'number',
       icon: Globe
     }

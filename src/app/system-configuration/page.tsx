@@ -30,107 +30,107 @@ export default function SystemConfigurationPage() {
   return (
     <div className='container mx-auto py-6'>
       <div className='mb-8'>
-        <h1 className='mb-2 text-3xl font-bold'>System Configuration</h1>
+        <h1 className='mb-2 text-3xl font-bold'>Cấu hình Hệ thống</h1>
         <p className='text-muted-foreground'>
-          Manage all system-wide configurations and settings for your logistics
-          operations
+          Quản lý tất cả các cấu hình hệ thống và cài đặt cho các hoạt động vận
+          chuyển
         </p>
       </div>
 
       <div className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
         {/* Administrative Section */}
         <SectionCard
-          title='Administrative'
-          description='Geographic and administrative settings'
+          title='Quản lý Địa lý'
+          description='Cài đặt địa lý và hành chính'
           icon={<FolderTree className='h-6 w-6' />}
         >
           <ConfigLink
             href='/system-configuration/administrative/zones'
             title='Shipping Zones'
             icon={<Map className='h-5 w-5' />}
-            description='Manage shipping zones and region groupings'
+            description='Quản lý vùng giao hàng và nhóm khu vực'
           />
           <ConfigLink
             href='/system-configuration/administrative/countries'
-            title='Countries'
+            title='Quốc Gia'
             icon={<Globe className='h-5 w-5' />}
-            description='Configure supported countries and their settings'
+            description='Cài đặt quốc gia và cài đặt quốc gia'
           />
           <ConfigLink
             href='/system-configuration/administrative/cities'
-            title='Cities'
+            title='Thành Phố'
             icon={<Building2 className='h-5 w-5' />}
-            description='Manage cities and urban centers'
+            description='Quản lý thành phố và khu vực đô thị'
           />
           <ConfigLink
             href='/system-configuration/administrative/branches'
-            title='Branches'
+            title='Chi Nhánh'
             icon={<Building2 className='h-5 w-5' />}
-            description='Configure company branches and locations'
+            description='Cài đặt chi nhánh và vị trí'
           />
         </SectionCard>
 
         {/* System Section */}
         <SectionCard
-          title='System'
-          description='Core system settings'
+          title='Hệ Thống'
+          description='Cài đặt hệ thống'
           icon={<Settings className='h-6 w-6' />}
         >
           <ConfigLink
             href='/system-configuration/system/commodity-types'
-            title='Commodity Types'
+            title='Loại Hàng'
             icon={<PackageOpen className='h-5 w-5' />}
-            description='Configure types of goods and commodities'
+            description='Cài đặt loại hàng'
           />
           <ConfigLink
             href='/system-configuration/system/shipping-types'
-            title='Shipping Types'
+            title='Loại Giao Hàng'
             icon={<PackageOpen className='h-5 w-5' />}
-            description='Configure shipping types'
+            description='Cài đặt loại giao hàng'
           />
           <ConfigLink
             href='/system-configuration/system/shipping-services'
-            title='Shipping Services'
+            title='Dịch vụ Giao Hàng'
             icon={<PackageOpen className='h-5 w-5' />}
-            description='Configure shipping services'
+            description='Cài đặt dịch vụ giao hàng'
           />
           <ConfigLink
             href='/system-configuration/system/payment-types'
-            title='Payment Types'
+            title='Loại Thanh Toán'
             icon={<PackageOpen className='h-5 w-5' />}
-            description='Configure payment types'
+            description='Cài đặt loại thanh toán'
           />
         </SectionCard>
 
         {/* Pricing Section */}
         <SectionCard
-          title='Pricing'
-          description='Rates, services and pricing rules'
+          title='Giá Bảng'
+          description='Giá, dịch vụ và quy tắc giá'
           icon={<CircleDollarSign className='h-6 w-6' />}
         >
           <ConfigLink
             href='/system-configuration/pricing/routes'
-            title='Routes'
+            title='Tuyến Vận Chuyển'
             icon={<Map className='h-5 w-5' />}
-            description='Configure shipping routes between locations'
+            description='Cài đặt các tuyến vận chuyển'
           />
           <ConfigLink
             href='/system-configuration/pricing/carriers'
-            title='Carriers'
+            title='Đơn Vị Vận Chuyển'
             icon={<Truck className='h-5 w-5' />}
-            description='Manage third-party carriers and services'
+            description='Quản lý đơn vị vận chuyển và dịch vụ'
           />
           <ConfigLink
             href='/system-configuration/pricing/insurance-packages'
-            title='Insurance Packages'
+            title='Bao Hiểm'
             icon={<PackageOpen className='h-5 w-5' />}
-            description='Configure insurance packages and coverage options'
+            description='Cài đặt gói bảo hiểm và các tùy chọn bảo hiểm'
           />
           <ConfigLink
             href='/system-configuration/pricing/prices'
-            title='Prices'
+            title='Quy Tắc Giá'
             icon={<CircleDollarSign className='h-5 w-5' />}
-            description='Manage base rates for routes and services'
+            description='Quản lý các quy tắc giá'
           />
         </SectionCard>
       </div>

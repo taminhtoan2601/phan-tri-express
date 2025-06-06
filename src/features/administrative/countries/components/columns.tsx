@@ -38,7 +38,7 @@ export const columns: ColumnDef<Country>[] = [
     id: 'zoneId',
     accessorKey: 'zoneId',
     header: ({ column }: { column: Column<Country, unknown> }) => (
-      <DataTableColumnHeader column={column} title='Zone' />
+      <DataTableColumnHeader column={column} title='Khu Vực' />
     ),
     cell: ({ row }) => {
       // Truy cập thuộc tính zone đã được join sẵn
@@ -54,7 +54,7 @@ export const columns: ColumnDef<Country>[] = [
     id: 'continent',
     accessorKey: 'continent',
     header: ({ column }: { column: Column<Country, unknown> }) => (
-      <DataTableColumnHeader column={column} title='Continent' />
+      <DataTableColumnHeader column={column} title='Lục địa' />
     ),
     cell: ({ row }) => (
       <Badge variant='outline' className='capitalize'>
@@ -110,14 +110,14 @@ export const columns: ColumnDef<Country>[] = [
     id: 'name',
     accessorKey: 'name',
     header: ({ column }: { column: Column<Country, unknown> }) => (
-      <DataTableColumnHeader column={column} title='Country Name' />
+      <DataTableColumnHeader column={column} title='Tên Quốc Gia' />
     ),
     cell: ({ row }) => <div>{row.getValue<string>('name')}</div>,
     enableSorting: true,
     enableColumnFilter: true,
     meta: {
-      label: 'Country',
-      placeholder: 'Search countries...',
+      label: 'Tên Quốc Gia',
+      placeholder: 'Tìm kiếm quốc gia...',
       variant: 'text',
       icon: Globe
     }

@@ -32,13 +32,10 @@ function InsurancePackagesPageContent() {
         style={{ minHeight: 'calc(100vh - 10rem)' }}
       >
         <div className='flex items-start justify-between'>
-          <Heading
-            title='Insurance Packages'
-            description='Manage insurance packages used in shipping orders'
-          />
+          <Heading title='Gói Bảo Hiểm' description='Quản lý gói bảo hiểm' />
           <Button onClick={() => openDrawer()}>
             <IconPlus className='mr-2 h-4 w-4' />
-            Add Insurance Package
+            Thêm Gói Bảo Hiểm
           </Button>
         </div>
         <Separator />
@@ -54,7 +51,7 @@ function InsurancePackagesPageContent() {
 
       <DataDrawer
         title={
-          insurancePackage ? 'Edit Insurance Package' : 'Add Insurance Package'
+          insurancePackage ? 'Chỉnh Sửa Gói Bảo Hiểm' : 'Thêm Gói Bảo Hiểm'
         }
         isOpen={isOpen}
         onClose={closeDrawer}

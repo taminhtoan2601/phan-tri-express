@@ -12,7 +12,7 @@ const baseConfig: NextConfig = {
       }
     ]
   },
-  transpilePackages: ['geist']
+  transpilePackages: ['inter']
 };
 
 let configWithPlugins = baseConfig;

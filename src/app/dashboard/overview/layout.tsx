@@ -27,16 +27,16 @@ export default function OverViewLayout({
       <div className='flex flex-1 flex-col space-y-2'>
         <div className='flex items-center justify-between space-y-2'>
           <h2 className='text-2xl font-bold tracking-tight'>
-            Hi, Welcome back 👋
+            Chào Mừng Bạn Quay Trở Lại 👋
           </h2>
         </div>
 
         <div className='*:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card dark:*:data-[slot=card]:bg-card grid grid-cols-1 gap-4 *:data-[slot=card]:bg-gradient-to-t *:data-[slot=card]:shadow-xs md:grid-cols-2 lg:grid-cols-4'>
           <Card className='@container/card'>
             <CardHeader>
-              <CardDescription>Total Revenue</CardDescription>
-              <CardTitle className='text-2xl font-semibold tabular-nums @[250px]/card:text-3xl'>
-                $1,250.00
+              <CardDescription>Doanh Thu</CardDescription>
+              <CardTitle className='text-md @[250px]/card:text-md font-semibold tabular-nums'>
+                10,000,000,000
               </CardTitle>
               <CardAction>
                 <Badge variant='outline'>
@@ -47,16 +47,14 @@ export default function OverViewLayout({
             </CardHeader>
             <CardFooter className='flex-col items-start gap-1.5 text-sm'>
               <div className='line-clamp-1 flex gap-2 font-medium'>
-                Trending up this month <IconTrendingUp className='size-4' />
-              </div>
-              <div className='text-muted-foreground'>
-                Visitors for the last 6 months
+                Tăng 12.5% so với tháng trước{' '}
+                <IconTrendingUp className='size-4' />
               </div>
             </CardFooter>
           </Card>
           <Card className='@container/card'>
             <CardHeader>
-              <CardDescription>New Customers</CardDescription>
+              <CardDescription>Khách hàng mới</CardDescription>
               <CardTitle className='text-2xl font-semibold tabular-nums @[250px]/card:text-3xl'>
                 1,234
               </CardTitle>
@@ -69,16 +67,14 @@ export default function OverViewLayout({
             </CardHeader>
             <CardFooter className='flex-col items-start gap-1.5 text-sm'>
               <div className='line-clamp-1 flex gap-2 font-medium'>
-                Down 20% this period <IconTrendingDown className='size-4' />
-              </div>
-              <div className='text-muted-foreground'>
-                Acquisition needs attention
+                Giảm 20% so với tháng trước{' '}
+                <IconTrendingDown className='size-4' />
               </div>
             </CardFooter>
           </Card>
           <Card className='@container/card'>
             <CardHeader>
-              <CardDescription>Growth Rate</CardDescription>
+              <CardDescription>Tỷ lệ tăng trưởng</CardDescription>
               <CardTitle className='text-2xl font-semibold tabular-nums @[250px]/card:text-3xl'>
                 4.5%
               </CardTitle>
@@ -91,11 +87,7 @@ export default function OverViewLayout({
             </CardHeader>
             <CardFooter className='flex-col items-start gap-1.5 text-sm'>
               <div className='line-clamp-1 flex gap-2 font-medium'>
-                Steady performance increase{' '}
-                <IconTrendingUp className='size-4' />
-              </div>
-              <div className='text-muted-foreground'>
-                Meets growth projections
+                Tăng trưởng ổn định <IconTrendingUp className='size-4' />
               </div>
             </CardFooter>
           </Card>
@@ -106,8 +98,8 @@ export default function OverViewLayout({
             {/* sales arallel routes */}
             {sales}
           </div>
-          <div className='col-span-4'>{area_stats}</div>
-          <div className='col-span-4 md:col-span-3'>{pie_stats}</div>
+          {/* <div className='col-span-4'>{area_stats}</div>
+          <div className='col-span-4 md:col-span-3'>{pie_stats}</div> */}
         </div>
       </div>
     </PageContainer>

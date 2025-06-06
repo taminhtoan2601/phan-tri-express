@@ -26,7 +26,7 @@ export const columns: ColumnDef<Price>[] = [
     id: 'routeId',
     accessorKey: 'routeId',
     header: ({ column }: { column: Column<Price, unknown> }) => (
-      <DataTableColumnHeader column={column} title='Route' />
+      <DataTableColumnHeader column={column} title='Tuyến Vận Chuyển' />
     ),
     cell: ({ row }) => {
       // Truy cập thuộc tính zone đã được join sẵn
@@ -37,7 +37,7 @@ export const columns: ColumnDef<Price>[] = [
     enableSorting: true,
     enableColumnFilter: true,
     meta: {
-      label: 'Route',
+      label: 'Tuyến Vận Chuyển',
       variant: 'multiSelect',
       options: routes.map((route) => ({
         label: route.name,
@@ -49,7 +49,7 @@ export const columns: ColumnDef<Price>[] = [
     id: 'shippingServiceId',
     accessorKey: 'shippingServiceId',
     header: ({ column }: { column: Column<Price, unknown> }) => (
-      <DataTableColumnHeader column={column} title='Service' />
+      <DataTableColumnHeader column={column} title='Dịch vụ' />
     ),
     cell: ({ row }) => {
       // Truy cập thuộc tính zone đã được join sẵn
@@ -64,7 +64,7 @@ export const columns: ColumnDef<Price>[] = [
     enableSorting: true,
     enableColumnFilter: true,
     meta: {
-      label: 'Shipping Service',
+      label: 'Dịch vụ',
       variant: 'multiSelect',
       options: shippingServices.map((service) => ({
         label: service.name,
@@ -76,7 +76,7 @@ export const columns: ColumnDef<Price>[] = [
     id: 'baseRatePerKg  ',
     accessorKey: 'baseRatePerKg',
     header: ({ column }: { column: Column<Price, unknown> }) => (
-      <DataTableColumnHeader column={column} title='Base Rate Per Kg' />
+      <DataTableColumnHeader column={column} title='Giá Cân Trung Bình' />
     ),
     cell: ({ row }) => {
       // Truy cập thuộc tính zone đã được join sẵn
@@ -91,7 +91,7 @@ export const columns: ColumnDef<Price>[] = [
     id: 'effectiveDate',
     accessorKey: 'effectiveDate',
     header: ({ column }: { column: Column<Price, unknown> }) => (
-      <DataTableColumnHeader column={column} title='Effective Date' />
+      <DataTableColumnHeader column={column} title='Ngày Hiệu Lực' />
     ),
     cell: ({ row }) => {
       // Truy cập thuộc tính zone đã được join sẵn
@@ -102,7 +102,7 @@ export const columns: ColumnDef<Price>[] = [
     enableSorting: true,
     enableColumnFilter: true,
     meta: {
-      label: 'Effective Date',
+      label: 'Ngày Hiệu Lực',
       variant: 'multiSelect',
       options: countries.map((country) => ({
         label: country.name,
@@ -114,7 +114,7 @@ export const columns: ColumnDef<Price>[] = [
     id: 'deletionDate',
     accessorKey: 'deletionDate',
     header: ({ column }: { column: Column<Price, unknown> }) => (
-      <DataTableColumnHeader column={column} title='Deletion Date' />
+      <DataTableColumnHeader column={column} title='Ngày Hủy' />
     ),
     cell: ({ row }) => {
       // Truy cập thuộc tính zone đã được join sẵn
@@ -125,7 +125,7 @@ export const columns: ColumnDef<Price>[] = [
     enableSorting: true,
     enableColumnFilter: true,
     meta: {
-      label: 'Deletion Date',
+      label: 'Ngày Hủy',
       variant: 'multiSelect',
       options: countries.map((country) => ({
         label: country.name,

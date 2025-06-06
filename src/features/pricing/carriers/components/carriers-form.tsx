@@ -34,8 +34,8 @@ import { Checkbox } from '@/components/ui/checkbox';
 const formSchema = z.object({
   name: z
     .string()
-    .min(1, { message: 'Name is required' })
-    .max(100, { message: 'Name cannot exceed 100 characters' }),
+    .min(1, { message: 'Tên là bắt buộc' })
+    .max(100, { message: 'Tên không được vượt quá 100 ký tự' }),
   routeIds: z.array(z.number())
 });
 
@@ -72,11 +72,11 @@ export function CarrierForm({ initialData, onClose }: CarrierFormProps) {
     mutationFn: createCarrier,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['carriers'] });
-      toast.success('Carrier created successfully');
+      toast.success('Đơn vị vận chuyển được tạo thành công.');
       onClose();
     },
     onError: (error: Error) => {
-      toast.error(`Failed to create carrier: ${error.message}`);
+      toast.error(`Không thể tạo đơn vị vận chuyển: ${error.message}`);
     }
   });
 
@@ -86,11 +86,11 @@ export function CarrierForm({ initialData, onClose }: CarrierFormProps) {
       updateCarrier(id, data),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['carriers'] });
-      toast.success('Carrier updated successfully');
+      toast.success('Đơn vị vận chuyển được cập nhật thành công.');
       onClose();
     },
     onError: (error: Error) => {
-      toast.error(`Failed to update carrier: ${error.message}`);
+      toast.error(`Không thể cập nhật đơn vị vận chuyển: ${error.message}`);
     }
   });
 
@@ -118,9 +118,9 @@ export function CarrierForm({ initialData, onClose }: CarrierFormProps) {
           name='name'
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name</FormLabel>
+              <FormLabel>Tên</FormLabel>
               <FormControl>
-                <Input placeholder='e.g. Basic Coverage' {...field} />
+                <Input placeholder='Tên đơn vị vận chuyển' {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -133,9 +133,11 @@ export function CarrierForm({ initialData, onClose }: CarrierFormProps) {
           render={() => (
             <FormItem>
               <div className='mb-4'>
-                <FormLabel className='text-base'>Routes</FormLabel>
+                <FormLabel className='text-base'>
+                  Các Tuyến Vận Chuyển
+                </FormLabel>
                 <FormDescription>
-                  Select the routes you want to display in the sidebar.
+                  Chọn các tuyến vận chuyển bạn muốn hiển thị trong thanh menu.
                 </FormDescription>
               </div>
               {routes.map((route) => (
@@ -183,7 +185,7 @@ export function CarrierForm({ initialData, onClose }: CarrierFormProps) {
             onClick={onClose}
             disabled={isPending}
           >
-            Cancel
+            Hủy
           </Button>
           <Button
             type='submit'
@@ -192,10 +194,10 @@ export function CarrierForm({ initialData, onClose }: CarrierFormProps) {
             }
           >
             {createMutation.isPending || updateMutation.isPending || isPending
-              ? 'Saving...'
+              ? 'Đang Lưu...'
               : initialData
-                ? 'Update'
-                : 'Create'}
+                ? 'Cập Nhật'
+                : 'Tạo'}
           </Button>
         </div>
       </form>

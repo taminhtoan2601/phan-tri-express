@@ -34,15 +34,11 @@ import { routes, shippingServices } from '@/data';
 
 // Form validation schema using Zod
 const formSchema = z.object({
-  routeId: z.number().min(1, { message: 'Route is required' }),
-  shippingServiceId: z
-    .number()
-    .min(1, { message: 'Shipping service is required' }),
-  baseRatePerKg: z
-    .number()
-    .min(0, { message: 'Base rate per kg must be a positive number' }),
-  effectiveDate: z.string().min(1, { message: 'Effective date is required' }),
-  deletionDate: z.string().min(1, { message: 'Deletion date is required' })
+  routeId: z.number().min(1, { message: 'Tuyến vận chuyển là bắt buộc' }),
+  shippingServiceId: z.number().min(1, { message: 'Dịch vụ là bắt buộc' }),
+  baseRatePerKg: z.number().min(0, { message: 'Giá phải là số dương' }),
+  effectiveDate: z.string().min(1, { message: 'Ngày hiệu lực là bắt buộc' }),
+  deletionDate: z.string().optional()
 });
 
 type PriceFormValues = z.infer<typeof formSchema>;
@@ -84,11 +80,11 @@ export function PricesForm({ initialData, onClose }: PriceFormProps) {
     mutationFn: createPrice,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['prices'] });
-      toast.success('Price created successfully');
+      toast.success('Giá tạo thành công');
       onClose();
     },
     onError: (error: Error) => {
-      toast.error(`Failed to create commodity type: ${error.message}`);
+      toast.error(`Tạo giá thất bại: ${error.message}`);
     }
   });
 
@@ -98,11 +94,11 @@ export function PricesForm({ initialData, onClose }: PriceFormProps) {
       updatePrice(id, data),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['prices'] });
-      toast.success('Price updated successfully');
+      toast.success('Giá cập nhật thành công');
       onClose();
     },
     onError: (error: Error) => {
-      toast.error(`Failed to update commodity type: ${error.message}`);
+      toast.error(`Cập nhật giá thất bại: ${error.message}`);
     }
   });
 
@@ -130,14 +126,14 @@ export function PricesForm({ initialData, onClose }: PriceFormProps) {
           name='routeId'
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Route</FormLabel>
+              <FormLabel>Tuyến vận chuyển</FormLabel>
               <FormControl>
                 <Select
                   onValueChange={field.onChange}
                   defaultValue={field.value.toString()}
                 >
                   <SelectTrigger>
-                    <SelectValue placeholder='Select a route' />
+                    <SelectValue placeholder='Chọn tuyến vận chuyển' />
                   </SelectTrigger>
                   <SelectContent>
                     {routes.map((route) => (
@@ -158,14 +154,14 @@ export function PricesForm({ initialData, onClose }: PriceFormProps) {
           name='shippingServiceId'
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Shipping Service</FormLabel>
+              <FormLabel>Dịch vụ</FormLabel>
               <FormControl>
                 <Select
                   onValueChange={field.onChange}
                   defaultValue={field.value.toString()}
                 >
                   <SelectTrigger>
-                    <SelectValue placeholder='Select a shipping service' />
+                    <SelectValue placeholder='Chọn dịch vụ' />
                   </SelectTrigger>
                   <SelectContent>
                     {shippingServices.map((service) => (
@@ -188,7 +184,7 @@ export function PricesForm({ initialData, onClose }: PriceFormProps) {
           name='baseRatePerKg'
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Base Rate Per Kg</FormLabel>
+              <FormLabel>Giá Cân Trung Bình</FormLabel>
               <FormControl>
                 <Input type='number' placeholder='e.g. 1000' {...field} />
               </FormControl>
@@ -202,7 +198,7 @@ export function PricesForm({ initialData, onClose }: PriceFormProps) {
           name='effectiveDate'
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Effective Date</FormLabel>
+              <FormLabel>Ngày Hiệu Lực</FormLabel>
               <FormControl>
                 <Input type='date' placeholder='e.g. 2023-01-01' {...field} />
               </FormControl>
@@ -218,7 +214,7 @@ export function PricesForm({ initialData, onClose }: PriceFormProps) {
             onClick={onClose}
             disabled={isPending}
           >
-            Cancel
+            Hủy
           </Button>
           <Button
             type='submit'
@@ -227,10 +223,10 @@ export function PricesForm({ initialData, onClose }: PriceFormProps) {
             }
           >
             {createMutation.isPending || updateMutation.isPending || isPending
-              ? 'Saving...'
+              ? 'Đang Lưu...'
               : initialData
-                ? 'Update'
-                : 'Create'}
+                ? 'Cập nhật'
+                : 'Tạo'}
           </Button>
         </div>
       </form>

@@ -33,12 +33,12 @@ function PaymentTypesPageContent() {
       >
         <div className='flex items-start justify-between'>
           <Heading
-            title='Shipping Services'
-            description='Manage shipping services used in shipping orders'
+            title='Dịch vụ Giao Hàng'
+            description='Quản lý các dịch vụ giao hàng được sử dụng trong các đơn hàng giao hàng'
           />
           <Button onClick={() => openDrawer()}>
             <IconPlus className='mr-2 h-4 w-4' />
-            Add Shipping Service
+            Thêm Dịch vụ Giao Hàng
           </Button>
         </div>
         <Separator />
@@ -54,7 +54,9 @@ function PaymentTypesPageContent() {
 
       <DataDrawer
         title={
-          shippingService ? 'Edit Shipping Service' : 'Add Shipping Service'
+          shippingService
+            ? 'Điều chỉnh Dịch vụ Giao Hàng'
+            : 'Thêm Dịch vụ Giao Hàng'
         }
         isOpen={isOpen}
         onClose={closeDrawer}

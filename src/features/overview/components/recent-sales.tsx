@@ -9,39 +9,39 @@ import {
 
 const salesData = [
   {
-    name: 'Olivia Martin',
-    email: 'olivia.martin@email.com',
+    name: 'Nguyễn Văn A',
+    email: 'nguyenvana@email.com',
     avatar: 'https://api.slingacademy.com/public/sample-users/1.png',
-    fallback: 'OM',
-    amount: '+$1,999.00'
+    fallback: 'NV',
+    amount: '+5 000 000'
   },
   {
-    name: 'Jackson Lee',
-    email: 'jackson.lee@email.com',
+    name: 'Nguyễn Văn B',
+    email: 'nguyenvanb@email.com',
     avatar: 'https://api.slingacademy.com/public/sample-users/2.png',
-    fallback: 'JL',
-    amount: '+$39.00'
+    fallback: 'NV',
+    amount: '+15 000 000'
   },
   {
-    name: 'Isabella Nguyen',
-    email: 'isabella.nguyen@email.com',
+    name: 'Nguyễn Văn C',
+    email: 'nguyenvanc@email.com',
     avatar: 'https://api.slingacademy.com/public/sample-users/3.png',
-    fallback: 'IN',
-    amount: '+$299.00'
+    fallback: 'NV',
+    amount: '+50 000 000'
   },
   {
-    name: 'William Kim',
-    email: 'will@email.com',
+    name: 'Nguyễn Văn D',
+    email: 'nguyenvand@email.com',
     avatar: 'https://api.slingacademy.com/public/sample-users/4.png',
-    fallback: 'WK',
-    amount: '+$99.00'
+    fallback: 'NV',
+    amount: '+5 000 000'
   },
   {
-    name: 'Sofia Davis',
-    email: 'sofia.davis@email.com',
+    name: 'Nguyễn Văn E',
+    email: 'nguyenvane@email.com',
     avatar: 'https://api.slingacademy.com/public/sample-users/5.png',
-    fallback: 'SD',
-    amount: '+$39.00'
+    fallback: 'NV',
+    amount: '+5 000 000'
   }
 ];
 
@@ -49,8 +49,8 @@ export function RecentSales() {
   return (
     <Card className='h-full'>
       <CardHeader>
-        <CardTitle>Recent Sales</CardTitle>
-        <CardDescription>You made 265 sales this month.</CardDescription>
+        <CardTitle>Đơn hàng gần nhất</CardTitle>
+        <CardDescription>Chi nhánh đã giao 265 đơn hàng</CardDescription>
       </CardHeader>
       <CardContent>
         <div className='space-y-8'>

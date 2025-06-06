@@ -57,9 +57,9 @@ export default function SystemOverview() {
   return (
     <div className='container mx-auto py-8'>
       <div className='mb-6'>
-        <h1 className='text-3xl font-bold'>System Configuration</h1>
+        <h1 className='text-3xl font-bold'>Cài Đặt Hệ Thống</h1>
         <p className='text-muted-foreground mt-2'>
-          Manage commodity types, shipping types, and payment methods
+          Quản lý loại hàng, loại giao hàng, và phương thức thanh toán
         </p>
       </div>
 
@@ -72,19 +72,16 @@ export default function SystemOverview() {
           <Card className='h-full'>
             <CardHeader>
               <div className='flex items-center justify-between'>
-                <CardTitle>Commodity Types</CardTitle>
+                <CardTitle>Loại Hàng</CardTitle>
                 <Package className='text-primary h-6 w-6' />
               </div>
-              <CardDescription>
-                Manage types of commodities for shipping
-              </CardDescription>
             </CardHeader>
             <CardContent>
-              <p>Configure different commodity types that can be shipped</p>
+              <p>Cấu hình các loại hàng có thể vận chuyển</p>
             </CardContent>
             <CardFooter>
               <div className='flex w-full items-center justify-between'>
-                <span className='text-muted-foreground'>Total Types</span>
+                <span className='text-muted-foreground'>Loại Hàng</span>
                 <span className='bg-primary/10 text-primary rounded-full px-3 py-1 text-lg font-medium'>
                   {commodityTypes?.length || 0}
                 </span>
@@ -101,20 +98,18 @@ export default function SystemOverview() {
           <Card className='h-full'>
             <CardHeader>
               <div className='flex items-center justify-between'>
-                <CardTitle>Shipping Types</CardTitle>
+                <CardTitle>Loại Giao Hàng</CardTitle>
                 <Truck className='text-primary h-6 w-6' />
               </div>
-              <CardDescription>Manage shipping service types</CardDescription>
             </CardHeader>
             <CardContent>
               <p>
-                Configure shipping service types with different speed and cost
-                options
+                Cấu hình các loại giao hàng với các tùy chọn tốc độ và chi phí
               </p>
             </CardContent>
             <CardFooter>
               <div className='flex w-full items-center justify-between'>
-                <span className='text-muted-foreground'>Service Types</span>
+                <span className='text-muted-foreground'>Loại Giao Hàng</span>
                 <span className='bg-primary/10 text-primary rounded-full px-3 py-1 text-lg font-medium'>
                   {shippingTypes?.length || 0}
                 </span>
@@ -130,15 +125,14 @@ export default function SystemOverview() {
           <Card className='h-full'>
             <CardHeader>
               <div className='flex items-center justify-between'>
-                <CardTitle>Shipping Services</CardTitle>
+                <CardTitle>Dịch vụ Giao Hàng</CardTitle>
                 <Truck className='text-primary h-6 w-6' />
               </div>
-              <CardDescription>Manage shipping service types</CardDescription>
             </CardHeader>
             <CardContent>
               <p>
-                Configure shipping service types with different speed and cost
-                options
+                Cấu hình các dịch vụ giao hàng với các tùy chọn tốc độ và chi
+                phí
               </p>
             </CardContent>
             <CardFooter>
@@ -159,19 +153,16 @@ export default function SystemOverview() {
           <Card className='h-full'>
             <CardHeader>
               <div className='flex items-center justify-between'>
-                <CardTitle>Payment Types</CardTitle>
+                <CardTitle>Loại Thanh Toán</CardTitle>
                 <CreditCard className='text-primary h-6 w-6' />
               </div>
-              <CardDescription>
-                Manage payment methods and options
-              </CardDescription>
             </CardHeader>
             <CardContent>
-              <p>Configure payment types and processing methods</p>
+              <p>Quản lý các loại thanh toán và các phương thức xử lý</p>
             </CardContent>
             <CardFooter>
               <div className='flex w-full items-center justify-between'>
-                <span className='text-muted-foreground'>Payment Methods</span>
+                <span className='text-muted-foreground'>Loại Thanh Toán</span>
                 <span className='bg-primary/10 text-primary rounded-full px-3 py-1 text-lg font-medium'>
                   {paymentTypes?.length || 0}
                 </span>

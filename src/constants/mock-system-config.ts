@@ -12,11 +12,11 @@ import {
   InsurancePackage,
   PaymentType,
   Price,
-  PriceConfiguration,
   PricingRule,
   Route,
   ShippingService,
   ShippingType,
+  SurchargeType,
   Zone
 } from '@/types/system-configuration';
 import { delay } from './mock-api';
@@ -30,10 +30,11 @@ import {
   routes as seedRoutes,
   prices as seedPrices,
   pricingRules as seedPricingRules,
-  shippingServices as seedShippingServices,
-  priceConfigurations,
+  shippingServices as seedShippingServices, // 1
+  surchargeTypes as seedSurchargeTypes,
   carriers as seedCarriers,
-  insurancePackages as seedInsurancePackages
+  insurancePackages as seedInsurancePackages,
+  shippingServices
 } from '@/data';
 
 // Helpers
@@ -720,72 +721,6 @@ export const fakePricingRules = {
   }
 };
 
-// PRICE CONFIGURATIONS
-export const fakePriceConfigurations = {
-  records: [] as PriceConfiguration[],
-
-  initialize() {
-    // Đảm bảo routes và carriers đã được khởi tạo trước
-    if (fakeRoutes.records.length === 0) {
-      fakeRoutes.initialize();
-    }
-    if (fakeCarriers.records.length === 0) {
-      fakeCarriers.initialize();
-    }
-    if (fakeCommodityTypes.records.length === 0) {
-      fakeCommodityTypes.initialize();
-    }
-    if (fakeShippingTypes.records.length === 0) {
-      fakeShippingTypes.initialize();
-    }
-
-    // Sử dụng dữ liệu từ file fake-price-configurations.ts
-    this.records = [...priceConfigurations];
-  },
-
-  async getAll() {
-    await delay(300);
-    return [...this.records];
-  },
-
-  async getById(id: number): Promise<PriceConfiguration | undefined> {
-    await delay(200);
-    return this.records.find((config) => config.id === id);
-  },
-
-  async create(
-    data: Omit<PriceConfiguration, 'id'>
-  ): Promise<PriceConfiguration> {
-    await delay(500);
-    const newConfig = {
-      id: generateId(),
-      ...data
-    };
-    this.records.push(newConfig);
-    return newConfig;
-  },
-
-  async update(
-    id: number,
-    data: Partial<PriceConfiguration>
-  ): Promise<PriceConfiguration> {
-    await delay(500);
-    const index = this.records.findIndex((config) => config.id === id);
-    if (index === -1) throw new Error('Price configuration not found');
-
-    this.records[index] = { ...this.records[index], ...data };
-    return this.records[index];
-  },
-
-  async delete(id: number): Promise<void> {
-    await delay(500);
-    const index = this.records.findIndex((config) => config.id === id);
-    if (index === -1) throw new Error('Price configuration not found');
-
-    this.records.splice(index, 1);
-  }
-};
-
 // PRICES (NEW MODEL)
 export const fakePrices = {
   records: [] as Price[],
@@ -921,6 +856,60 @@ export const fakeInsurancePackages = {
   }
 };
 
+// Surcharge Types
+export const fakeSurchargeTypes = {
+  records: [] as SurchargeType[],
+
+  initialize() {
+    // Sử dụng dữ liệu từ file fake-surcharge-types.ts
+    this.records = [...seedSurchargeTypes];
+  },
+
+  async getAll() {
+    await delay(300); // Simulate network delay
+    return [...this.records];
+  },
+
+  async getById(id: number): Promise<SurchargeType | undefined> {
+    await delay(200);
+    return this.records.find((surchargeType) => surchargeType.id === id);
+  },
+
+  async create(data: Omit<SurchargeType, 'id'>): Promise<SurchargeType> {
+    await delay(500);
+    const newSurchargeType = {
+      id: generateId(),
+      ...data
+    };
+    this.records.push(newSurchargeType);
+    return newSurchargeType;
+  },
+
+  async update(
+    id: number,
+    data: Partial<SurchargeType>
+  ): Promise<SurchargeType> {
+    await delay(500);
+    const index = this.records.findIndex(
+      (surchargeType) => surchargeType.id === id
+    );
+    if (index === -1) throw new Error('Surcharge type not found');
+
+    this.records[index] = { ...this.records[index], ...data };
+    return this.records[index];
+  },
+
+  async delete(id: number): Promise<void> {
+    await delay(500);
+    const index = this.records.findIndex(
+      (surchargeType) => surchargeType.id === id
+    );
+    if (index === -1) throw new Error('Surcharge type not found');
+
+    this.records.splice(index, 1);
+  }
+};
+
 // Initialize all mock data
 export function initializeSystemConfigData() {
   fakeZones.initialize();
@@ -935,6 +924,6 @@ export function initializeSystemConfigData() {
   fakeRoutes.initialize();
   fakeCarriers.initialize();
   fakeInsurancePackages.initialize();
-  fakePriceConfigurations.initialize();
   fakePrices.initialize();
+  fakeSurchargeTypes.initialize();
 }

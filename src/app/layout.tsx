@@ -9,6 +9,15 @@ import NextTopLoader from 'nextjs-toploader';
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
 import './globals.css';
 import './theme.css';
+import { Inter, Noto_Sans } from 'next/font/google';
+
+// đổi sang Inter static
+const inter = Inter({
+  weight: ['400', '600'],
+  style: ['normal'],
+  subsets: ['latin', 'vietnamese'],
+  variable: '--font-inter'
+});
 
 const META_THEME_COLORS = {
   light: '#ffffff',
@@ -34,7 +43,7 @@ export default async function RootLayout({
   const isScaled = activeThemeValue?.endsWith('-scaled');
 
   return (
-    <html lang='en' suppressHydrationWarning>
+    <html lang='vi' suppressHydrationWarning className={`${inter.variable}`}>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -66,12 +75,22 @@ export default async function RootLayout({
             enableColorScheme
           >
             <Providers activeThemeValue={activeThemeValue as string}>
-              <Toaster />
+              <Toaster
+                richColors={true}
+                swipeDirections={['top', 'bottom']}
+                theme='light'
+              />
               {children}
             </Providers>
           </ThemeProvider>
         </NuqsAdapter>
       </body>
+      <footer className='bg-background text-muted-foreground fixed right-0 bottom-0 left-0 w-full p-5 text-center text-sm'>
+        <p>
+          Phan Tri Express &copy; {new Date().getFullYear()} @Bản quyền thuộc về
+          Phan Tri Express
+        </p>
+      </footer>
     </html>
   );
 }

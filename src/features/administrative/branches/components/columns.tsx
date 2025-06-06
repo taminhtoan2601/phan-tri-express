@@ -22,7 +22,7 @@ export const columns: ColumnDef<Branch>[] = [
   {
     accessorKey: 'city',
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title='City' />
+      <DataTableColumnHeader column={column} title='Thành Phố' />
     ),
     cell: ({ row }) => {
       const city = row.original;
@@ -34,7 +34,7 @@ export const columns: ColumnDef<Branch>[] = [
   {
     accessorKey: 'code',
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title='Code' />
+      <DataTableColumnHeader column={column} title='Mã' />
     ),
     cell: ({ row }) => <div>{row.getValue('code')}</div>,
     enableSorting: true,
@@ -44,7 +44,7 @@ export const columns: ColumnDef<Branch>[] = [
   {
     accessorKey: 'name',
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title='Name' />
+      <DataTableColumnHeader column={column} title='Tên' />
     ),
     cell: ({ row }) => (
       <div className='max-w-[200px] truncate'>{row.getValue('name')}</div>
@@ -56,7 +56,7 @@ export const columns: ColumnDef<Branch>[] = [
   {
     accessorKey: 'address',
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title='Address' />
+      <DataTableColumnHeader column={column} title='Địa chỉ' />
     ),
     cell: ({ row }) => (
       <div className='max-w-[300px] truncate'>{row.getValue('address')}</div>
@@ -68,7 +68,7 @@ export const columns: ColumnDef<Branch>[] = [
   {
     accessorKey: 'phone',
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title='Phone' />
+      <DataTableColumnHeader column={column} title='Số điện thoại' />
     ),
     cell: ({ row }) => <div>{row.getValue('phone')}</div>,
     enableSorting: true,
@@ -77,7 +77,7 @@ export const columns: ColumnDef<Branch>[] = [
   {
     accessorKey: 'discount',
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title='Discount %' />
+      <DataTableColumnHeader column={column} title='Chiết khấu %' />
     ),
     cell: ({ row }) => {
       const discount = parseFloat(row.getValue('discount'));
@@ -89,7 +89,7 @@ export const columns: ColumnDef<Branch>[] = [
         maximumFractionDigits: 2
       }).format(discount / 100);
 
-      return <div className='text-right font-medium'>{formatted}</div>;
+      return <div className='font-medium'>{formatted}</div>;
     },
     enableSorting: true,
     enableHiding: true

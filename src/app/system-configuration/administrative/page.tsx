@@ -52,9 +52,9 @@ export default function AdministrativeOverview() {
   return (
     <div className='container mx-auto py-8'>
       <div className='mb-6'>
-        <h1 className='text-3xl font-bold'>Administrative Configuration</h1>
+        <h1 className='text-3xl font-bold'>Cấu Hình Hành Chính</h1>
         <p className='text-muted-foreground mt-2'>
-          Manage branches, countries, and other administrative settings
+          Quản lý các cài đặt hành chính
         </p>
       </div>
 
@@ -67,19 +67,16 @@ export default function AdministrativeOverview() {
           <Card className='h-full'>
             <CardHeader>
               <div className='flex items-center justify-between'>
-                <CardTitle>Zones</CardTitle>
+                <CardTitle>Khu Vực</CardTitle>
                 <MapPin className='text-primary h-6 w-6' />
               </div>
-              <CardDescription>
-                Manage shipping zones for pricing
-              </CardDescription>
             </CardHeader>
             <CardContent>
-              <p>Configure geographic zones used for pricing calculations</p>
+              <p>Cấu hình các khu vực giao hàng</p>
             </CardContent>
             <CardFooter>
               <div className='flex w-full items-center justify-between'>
-                <span className='text-muted-foreground'>Total Zones</span>
+                <span className='text-muted-foreground'>Tổng Số Khu Vực</span>
                 <span className='bg-primary/10 text-primary rounded-full px-3 py-1 text-lg font-medium'>
                   {zones?.length || 0}
                 </span>
@@ -95,21 +92,16 @@ export default function AdministrativeOverview() {
           <Card className='h-full'>
             <CardHeader>
               <div className='flex items-center justify-between'>
-                <CardTitle>Countries</CardTitle>
+                <CardTitle>Quốc Gia</CardTitle>
                 <Globe className='text-primary h-6 w-6' />
               </div>
-              <CardDescription>
-                Manage shipping destination countries
-              </CardDescription>
             </CardHeader>
             <CardContent>
-              <p>
-                Configure and manage countries where shipments can be sent to
-              </p>
+              <p>Cấu hình các quốc gia</p>
             </CardContent>
             <CardFooter>
               <div className='flex w-full items-center justify-between'>
-                <span className='text-muted-foreground'>Total Countries</span>
+                <span className='text-muted-foreground'>Tổng Số Quốc Gia</span>
                 <span className='bg-primary/10 text-primary rounded-full px-3 py-1 text-lg font-medium'>
                   {countries?.length || 0}
                 </span>
@@ -126,19 +118,16 @@ export default function AdministrativeOverview() {
           <Card className='h-full'>
             <CardHeader>
               <div className='flex items-center justify-between'>
-                <CardTitle>Cities</CardTitle>
+                <CardTitle>Thành Phố</CardTitle>
                 <MapPin className='text-primary h-6 w-6' />
               </div>
-              <CardDescription>
-                Manage shipping destination cities
-              </CardDescription>
             </CardHeader>
             <CardContent>
-              <p>Configure and manage cities where shipments can be sent to</p>
+              <p>Cấu hình các thành phố</p>
             </CardContent>
             <CardFooter>
               <div className='flex w-full items-center justify-between'>
-                <span className='text-muted-foreground'>Total Cities</span>
+                <span className='text-muted-foreground'>Tổng Số Thành Phố</span>
                 <span className='bg-primary/10 text-primary rounded-full px-3 py-1 text-lg font-medium'>
                   {cities?.length || 0}
                 </span>
@@ -154,22 +143,16 @@ export default function AdministrativeOverview() {
           <Card className='h-full'>
             <CardHeader>
               <div className='flex items-center justify-between'>
-                <CardTitle>Branches</CardTitle>
+                <CardTitle>Chi Nhánh</CardTitle>
                 <Building className='text-primary h-6 w-6' />
               </div>
-              <CardDescription>
-                Manage company branches and offices
-              </CardDescription>
             </CardHeader>
             <CardContent>
-              <p>
-                Configure branch locations, contact information, and operational
-                settings
-              </p>
+              <p>Cấu hình các chi nhánh</p>
             </CardContent>
             <CardFooter>
               <div className='flex w-full items-center justify-between'>
-                <span className='text-muted-foreground'>Active Branches</span>
+                <span className='text-muted-foreground'>Tổng Số Chi Nhánh</span>
                 <span className='bg-primary/10 text-primary rounded-full px-3 py-1 text-lg font-medium'>
                   {branches?.length || 0}
                 </span>

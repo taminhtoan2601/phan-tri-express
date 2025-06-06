@@ -2,11 +2,11 @@ import type { City } from '../types/system-configuration';
 
 export const cities: City[] = [
   // ===== Asia =====
-  { id: 1, code: 'VNSGN', name: 'Ho Chi Minh', countryId: 1 }, // VN.id = 1
-  { id: 2, code: 'VNHAN', name: 'Hanoi', countryId: 1 },
-  { id: 3, code: 'CNBJS', name: 'Beijing', countryId: 2 }, // CN.id = 2
+  { id: 1, code: 'VNSGN', name: 'Hồ Chí Minh', countryId: 1 }, // VN.id = 1
+  { id: 2, code: 'VNHAN', name: 'Hà Nội', countryId: 1 },
+  { id: 3, code: 'CNBJS', name: 'Bắc Kinh', countryId: 2 }, // CN.id = 2
   { id: 4, code: 'CNSHA', name: 'Shanghai', countryId: 2 },
-  { id: 5, code: 'JPTYO', name: 'Tokyo', countryId: 3 }, // JP.id = 3
+  { id: 5, code: 'JPTYO', name: 'Tôkyô', countryId: 3 }, // JP.id = 3
   { id: 6, code: 'JPOSA', name: 'Osaka', countryId: 3 },
   { id: 7, code: 'INDEL', name: 'Delhi', countryId: 4 }, // IN.id = 4
   { id: 8, code: 'INBOM', name: 'Mumbai', countryId: 4 },

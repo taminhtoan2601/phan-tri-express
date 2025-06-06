@@ -26,7 +26,7 @@ export const columns: ColumnDef<CommodityType>[] = [
     id: 'code',
     accessorKey: 'code',
     header: ({ column }: { column: Column<CommodityType, unknown> }) => (
-      <DataTableColumnHeader column={column} title='Code' />
+      <DataTableColumnHeader column={column} title='Mã' />
     ),
     cell: ({ row }) => (
       <div className='font-medium uppercase'>{row.getValue('code')}</div>
@@ -34,8 +34,8 @@ export const columns: ColumnDef<CommodityType>[] = [
     enableSorting: true,
     enableColumnFilter: true,
     meta: {
-      label: 'Code',
-      placeholder: 'Search by code...',
+      label: 'Mã',
+      placeholder: 'Tìm kiếm theo mã...',
       variant: 'text',
       icon: Text
     }
@@ -44,14 +44,14 @@ export const columns: ColumnDef<CommodityType>[] = [
     id: 'name',
     accessorKey: 'name',
     header: ({ column }: { column: Column<CommodityType, unknown> }) => (
-      <DataTableColumnHeader column={column} title='Name' />
+      <DataTableColumnHeader column={column} title='Tên' />
     ),
     cell: ({ row }) => <div>{row.getValue<string>('name')}</div>,
     enableSorting: true,
     enableColumnFilter: true,
     meta: {
-      label: 'Name',
-      placeholder: 'Search by name...',
+      label: 'Tên',
+      placeholder: 'Tìm kiếm theo tên...',
       variant: 'text',
       icon: Globe
     }

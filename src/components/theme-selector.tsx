@@ -1,7 +1,6 @@
 'use client';
 
 import { useThemeConfig } from '@/components/active-theme';
-import { Label } from '@/components/ui/label';
 import {
   Select,
   SelectContent,
@@ -15,30 +14,30 @@ import {
 
 const DEFAULT_THEMES = [
   {
-    name: 'Default',
+    name: 'Mặc định',
     value: 'default'
   },
   {
-    name: 'Blue',
+    name: 'Xanh',
     value: 'blue'
   },
   {
-    name: 'Green',
+    name: 'Xanh lá',
     value: 'green'
   },
   {
-    name: 'Amber',
+    name: 'Hổ phách',
     value: 'amber'
   }
 ];
 
 const SCALED_THEMES = [
   {
-    name: 'Default',
+    name: 'Mặc định',
     value: 'default-scaled'
   },
   {
-    name: 'Blue',
+    name: 'Xanh',
     value: 'blue-scaled'
   }
 ];
@@ -55,21 +54,16 @@ export function ThemeSelector() {
 
   return (
     <div className='flex items-center gap-2'>
-      <Label htmlFor='theme-selector' className='sr-only'>
-        Theme
-      </Label>
       <Select value={activeTheme} onValueChange={setActiveTheme}>
         <SelectTrigger
           id='theme-selector'
-          className='justify-start *:data-[slot=select-value]:w-12'
+          className='justify-start *:data-[slot=select-value]:w-16'
         >
-          <span className='text-muted-foreground hidden sm:block'>Theme:</span>
-          <span className='text-muted-foreground block sm:hidden'>Theme</span>
           <SelectValue placeholder='Select a theme' />
         </SelectTrigger>
         <SelectContent align='end'>
           <SelectGroup>
-            <SelectLabel>Default</SelectLabel>
+            <SelectLabel>Mặc định</SelectLabel>
             {DEFAULT_THEMES.map((theme) => (
               <SelectItem key={theme.name} value={theme.value}>
                 {theme.name}
@@ -78,7 +72,7 @@ export function ThemeSelector() {
           </SelectGroup>
           <SelectSeparator />
           <SelectGroup>
-            <SelectLabel>Scaled</SelectLabel>
+            <SelectLabel>Thu nhỏ</SelectLabel>
             {SCALED_THEMES.map((theme) => (
               <SelectItem key={theme.name} value={theme.value}>
                 {theme.name}

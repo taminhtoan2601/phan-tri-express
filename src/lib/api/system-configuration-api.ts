@@ -10,7 +10,6 @@ import {
   Country,
   InsurancePackage,
   PaymentType,
-  PriceConfiguration,
   Route,
   ShippingType,
   ShippingService,
@@ -26,7 +25,6 @@ import {
   fakeCountries,
   fakeInsurancePackages,
   fakePaymentTypes,
-  fakePriceConfigurations,
   fakePrices,
   fakeRoutes,
   fakeShippingServices,
@@ -44,7 +42,6 @@ const initializeMockData = () => {
   fakeRoutes.initialize();
   fakeCarriers.initialize();
   fakeInsurancePackages.initialize();
-  fakePriceConfigurations.initialize();
   fakeShippingServices.initialize();
   fakeZones.initialize();
 };

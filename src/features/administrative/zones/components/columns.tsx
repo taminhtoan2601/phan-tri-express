@@ -25,14 +25,14 @@ export const columns: ColumnDef<Zone>[] = [
     id: 'name',
     accessorKey: 'name',
     header: ({ column }: { column: Column<Zone, unknown> }) => (
-      <DataTableColumnHeader column={column} title='Zone Name' />
+      <DataTableColumnHeader column={column} title='Tên Khu Vực' />
     ),
     cell: ({ row }) => <div>{row.getValue<string>('name')}</div>,
     enableSorting: true,
     enableColumnFilter: true,
     meta: {
-      label: 'name',
-      placeholder: 'Search by name...'
+      label: 'Tên Khu Vực',
+      placeholder: 'Tìm kiếm theo tên...'
     }
   },
   {

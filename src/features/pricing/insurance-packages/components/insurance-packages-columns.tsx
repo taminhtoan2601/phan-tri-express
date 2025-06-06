@@ -26,14 +26,14 @@ export const columns: ColumnDef<InsurancePackage>[] = [
     id: 'name',
     accessorKey: 'name',
     header: ({ column }: { column: Column<InsurancePackage, unknown> }) => (
-      <DataTableColumnHeader column={column} title='Name' />
+      <DataTableColumnHeader column={column} title='Tên' />
     ),
     cell: ({ row }) => <div>{row.getValue<string>('name')}</div>,
     enableSorting: true,
     enableColumnFilter: true,
     meta: {
-      label: 'Name',
-      placeholder: 'Search by name...',
+      label: 'Tên',
+      placeholder: 'Tìm kiếm theo tên...',
       variant: 'text',
       icon: Globe
     }
@@ -42,14 +42,14 @@ export const columns: ColumnDef<InsurancePackage>[] = [
     id: 'rate',
     accessorKey: 'rate',
     header: ({ column }: { column: Column<InsurancePackage, unknown> }) => (
-      <DataTableColumnHeader column={column} title='Rate' />
+      <DataTableColumnHeader column={column} title='Tỉ Giá' />
     ),
     cell: ({ row }) => <div>{row.getValue<number>('rate')}</div>,
     enableSorting: true,
     enableColumnFilter: true,
     meta: {
-      label: 'Rate',
-      placeholder: 'Search by rate...',
+      label: 'Tỉ Giá',
+      placeholder: 'Tìm kiếm theo tỉ giá...',
       variant: 'number',
       icon: Text
     }
@@ -58,14 +58,14 @@ export const columns: ColumnDef<InsurancePackage>[] = [
     id: 'activeDate',
     accessorKey: 'activeDate',
     header: ({ column }: { column: Column<InsurancePackage, unknown> }) => (
-      <DataTableColumnHeader column={column} title='Active Date' />
+      <DataTableColumnHeader column={column} title='Ngày Hiệu Lực' />
     ),
     cell: ({ row }) => <div>{row.getValue<string>('activeDate')}</div>,
     enableSorting: true,
     enableColumnFilter: true,
     meta: {
-      label: 'Active Date',
-      placeholder: 'Search by active date...',
+      label: 'Ngày Hiệu Lực',
+      placeholder: 'Tìm kiếm theo ngày hiệu lực...',
       variant: 'date',
       icon: Calendar
     }

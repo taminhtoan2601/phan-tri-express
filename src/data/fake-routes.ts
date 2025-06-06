@@ -10,7 +10,7 @@ export const routes: Route[] = [
     destinationCityId: 2,
     zoneId: 1,
     code: 'HCM-HAN',
-    name: 'HCM-HAN'
+    name: 'Hồ Chí Minh - Hà Nội'
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ export const routes: Route[] = [
     destinationCityId: 1,
     zoneId: 1,
     code: 'HAN-HCM',
-    name: 'HAN-HCM'
+    name: 'Hà Nội - Hồ Chí Minh'
   },
 
   // —— VN→Asia (SGN→BJS, HAN→TYO) ——
@@ -32,7 +32,7 @@ export const routes: Route[] = [
     destinationCityId: 3,
     zoneId: 2,
     code: 'HCM-BJS',
-    name: 'HCM-BJS'
+    name: 'Hồ Chí Minh - Bắc Kinh'
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ export const routes: Route[] = [
     destinationCityId: 5,
     zoneId: 2,
     code: 'HCM-TYO',
-    name: 'HCM-TYO'
+    name: 'Hồ Chí Minh - Tokyo'
   },
 
   // —— VN→Europe (SGN→PAR, HAN→BER) ——
@@ -54,7 +54,7 @@ export const routes: Route[] = [
     destinationCityId: 9,
     zoneId: 3,
     code: 'HCM-PAR',
-    name: 'HCM-PAR'
+    name: 'Hồ Chí Minh - Paris'
   },
   {
     id: 6,
@@ -64,7 +64,7 @@ export const routes: Route[] = [
     destinationCityId: 11,
     zoneId: 3,
     code: 'HCM-BER',
-    name: 'HCM-BER'
+    name: 'Hồ Chí Minh - Berlin'
   },
 
   // —— VN→North America (SGN→NYC, HAN→TOR) ——
@@ -76,7 +76,7 @@ export const routes: Route[] = [
     destinationCityId: 17,
     zoneId: 4,
     code: 'HCM-NYC',
-    name: 'HCM-NYC'
+    name: 'Hồ Chí Minh - New York'
   },
   {
     id: 8,
@@ -86,7 +86,7 @@ export const routes: Route[] = [
     destinationCityId: 19,
     zoneId: 4,
     code: 'HCM-TOR',
-    name: 'HCM-TOR'
+    name: 'Hồ Chí Minh - Toronto'
   },
 
   // —— VN→South America (SGN→SAO, HAN→BUE) ——
@@ -98,7 +98,7 @@ export const routes: Route[] = [
     destinationCityId: 23,
     zoneId: 5,
     code: 'HCM-SA',
-    name: 'HCM-SA'
+    name: 'Hồ Chí Minh - São Paulo'
   },
   {
     id: 10,
@@ -108,7 +108,7 @@ export const routes: Route[] = [
     destinationCityId: 25,
     zoneId: 5,
     code: 'HCM-BUE',
-    name: 'HCM-BUE'
+    name: 'Hồ Chí Minh - Buenos Aires'
   },
 
   // —— VN→Africa (SGN→JNB, HAN→CAY) ——
@@ -120,7 +120,7 @@ export const routes: Route[] = [
     destinationCityId: 27,
     zoneId: 6,
     code: 'HCM-JNB',
-    name: 'HCM-JNB'
+    name: 'Hồ Chí Minh - Johannesburg'
   },
   {
     id: 12,
@@ -130,7 +130,7 @@ export const routes: Route[] = [
     destinationCityId: 29,
     zoneId: 6,
     code: 'HCM-CAY',
-    name: 'HCM-CAY'
+    name: 'Hồ Chí Minh - Cairo'
   },
 
   // —— VN→Oceania (SGN→SYD, HAN→AUK) ——
@@ -142,7 +142,7 @@ export const routes: Route[] = [
     destinationCityId: 33,
     zoneId: 7,
     code: 'HCM-SYD',
-    name: 'HCM-SYD'
+    name: 'Hồ Chí Minh - Sydney'
   },
   {
     id: 14,
@@ -152,6 +152,6 @@ export const routes: Route[] = [
     destinationCityId: 35,
     zoneId: 7,
     code: 'HCM-AUK',
-    name: 'HCM-AUK'
+    name: 'Hồ Chí Minh - Auckland'
   }
 ];

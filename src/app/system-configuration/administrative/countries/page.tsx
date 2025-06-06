@@ -42,12 +42,12 @@ function CountriesContent() {
       >
         <div className='flex items-start justify-between'>
           <Heading
-            title='Countries'
-            description='Manage countries for shipping routes and logistics'
+            title='Quốc Gia'
+            description='Quản lý quốc gia cho các tuyến giao hàng'
           />
           <Button onClick={handleAddNewCountry}>
             <IconPlus className='mr-2 h-4 w-4' />
-            Add Country
+            Thêm Quốc Gia
           </Button>
         </div>
         <Separator />
@@ -61,7 +61,7 @@ function CountriesContent() {
         </Suspense>
 
         <DataDrawer
-          title={country ? 'Edit Country' : 'Add Country'}
+          title={country ? 'Sửa Quốc Gia' : 'Thêm Quốc Gia'}
           isOpen={isOpen}
           onClose={closeDrawer}
         >

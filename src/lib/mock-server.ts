@@ -11,7 +11,8 @@ import {
   fakeRoutes,
   fakeCarriers,
   fakeInsurancePackages,
-  fakePriceConfigurations,
+  fakePrices,
+  fakeSurchargeTypes,
   initializeSystemConfigData
 } from '@/constants/mock-system-config';
 
@@ -146,7 +147,8 @@ const handlers = [
   ...createHandlers('routes', fakeRoutes),
   ...createHandlers('carriers', fakeCarriers),
   ...createHandlers('insurance-packages', fakeInsurancePackages),
-  ...createHandlers('price-configurations', fakePriceConfigurations)
+  ...createHandlers('prices', fakePrices),
+  ...createHandlers('surcharge-types', fakeSurchargeTypes)
 ];
 
 /**

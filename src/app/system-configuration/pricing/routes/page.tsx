@@ -33,12 +33,12 @@ function RoutesPageContent() {
       >
         <div className='flex items-start justify-between'>
           <Heading
-            title='Routes'
-            description='Manage routes used in shipping orders'
+            title='Tuyến Vận Chuyển'
+            description='Quản lý các tuyến vận chuyển'
           />
           <Button onClick={() => openDrawer()}>
             <IconPlus className='mr-2 h-4 w-4' />
-            Add Route
+            Thêm Tuyến Vận Chuyển
           </Button>
         </div>
         <Separator />
@@ -53,7 +53,7 @@ function RoutesPageContent() {
       </div>
 
       <DataDrawer
-        title={route ? 'Edit Route' : 'Add Route'}
+        title={route ? 'Chỉnh Sửa Tuyến Vận Chuyển' : 'Thêm Tuyến Vận Chuyển'}
         isOpen={isOpen}
         onClose={closeDrawer}
       >

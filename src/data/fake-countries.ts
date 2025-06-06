@@ -12,7 +12,7 @@ export const countries: Country[] = [
     id: 1,
     code2: 'VN',
     code3: 'VNM',
-    name: 'Vietnam',
+    name: 'Việt Nam',
     continent: 'Asia',
     zoneId: 1
   },
@@ -20,7 +20,7 @@ export const countries: Country[] = [
     id: 2,
     code2: 'CN',
     code3: 'CHN',
-    name: 'China',
+    name: 'Trung Quốc',
     continent: 'Asia',
     zoneId: 2
   },
@@ -28,7 +28,7 @@ export const countries: Country[] = [
     id: 3,
     code2: 'JP',
     code3: 'JPN',
-    name: 'Japan',
+    name: 'Nhật Bản',
     continent: 'Asia',
     zoneId: 2
   },
@@ -36,7 +36,7 @@ export const countries: Country[] = [
     id: 4,
     code2: 'IN',
     code3: 'IND',
-    name: 'India',
+    name: 'Ấn Độ',
     continent: 'Asia',
     zoneId: 2
   },
@@ -46,7 +46,7 @@ export const countries: Country[] = [
     id: 5,
     code2: 'FR',
     code3: 'FRA',
-    name: 'France',
+    name: 'Pháp',
     continent: 'Europe',
     zoneId: 3
   },
@@ -54,7 +54,7 @@ export const countries: Country[] = [
     id: 6,
     code2: 'DE',
     code3: 'DEU',
-    name: 'Germany',
+    name: 'Đức',
     continent: 'Europe',
     zoneId: 3
   },
@@ -62,7 +62,7 @@ export const countries: Country[] = [
     id: 7,
     code2: 'GB',
     code3: 'GBR',
-    name: 'United Kingdom',
+    name: 'Anh',
     continent: 'Europe',
     zoneId: 3
   },
@@ -70,7 +70,7 @@ export const countries: Country[] = [
     id: 8,
     code2: 'IT',
     code3: 'ITA',
-    name: 'Italy',
+    name: 'Ý',
     continent: 'Europe',
     zoneId: 3
   },
@@ -80,7 +80,7 @@ export const countries: Country[] = [
     id: 9,
     code2: 'US',
     code3: 'USA',
-    name: 'United States',
+    name: 'Mỹ',
     continent: 'North America',
     zoneId: 4
   },

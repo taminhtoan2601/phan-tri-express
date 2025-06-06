@@ -33,12 +33,12 @@ function CarriersPageContent() {
       >
         <div className='flex items-start justify-between'>
           <Heading
-            title='Carriers'
-            description='Manage carriers used in shipping orders'
+            title='Đơn Vị Vận Chuyển'
+            description='Quản lý đơn vị vận chuyển'
           />
           <Button onClick={() => openDrawer()}>
             <IconPlus className='mr-2 h-4 w-4' />
-            Add Carrier
+            Thêm Đơn Vị Vận Chuyển
           </Button>
         </div>
         <Separator />
@@ -53,7 +53,9 @@ function CarriersPageContent() {
       </div>
 
       <DataDrawer
-        title={carrier ? 'Edit Carrier' : 'Add Carrier'}
+        title={
+          carrier ? 'Chỉnh Sửa Đơn Vị Vận Chuyển' : 'Thêm Đơn Vị Vận Chuyển'
+        }
         isOpen={isOpen}
         onClose={closeDrawer}
       >

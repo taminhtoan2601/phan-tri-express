@@ -7,12 +7,15 @@ import {
   Carrier,
   CommodityType,
   Country,
+  City,
   InsurancePackage,
   PaymentType,
-  PriceConfiguration,
+  Price,
   Route,
   ShippingType,
-  Zone
+  SurchargeType,
+  Zone,
+  ShippingService
 } from '@/types/system-configuration';
 
 import {
@@ -20,13 +23,24 @@ import {
   fakeCarriers,
   fakeCommodityTypes,
   fakeCountries,
+  fakeCities,
   fakeInsurancePackages,
   fakePaymentTypes,
-  fakePriceConfigurations,
+  fakePrices,
   fakeRoutes,
   fakeShippingTypes,
-  fakeZones
+  fakeZones,
+  fakeSurchargeTypes,
+  fakeShippingServices
 } from '@/constants/mock-system-config';
+
+import { commodityTypes as mockCommodityTypes } from '@/data/fake-commodity-types';
+import { shippingTypes as mockShippingTypes } from '@/data/fake-shipping-types';
+import { paymentTypes as mockPaymentTypes } from '@/data/fake-payment-types';
+import { routes as mockRoutes } from '@/data/fake-routes';
+import { carriers as mockCarriers } from '@/data/fake-carriers';
+import { insurancePackages as mockInsurancePackages } from '@/data/fake-insurance-packages';
+import { surchargeTypes as mockSurchargeTypes } from '@/data/fake-surcharge-types';
 
 // Initialize all mock data stores
 const initializeMockData = () => {
@@ -38,8 +52,10 @@ const initializeMockData = () => {
   fakeRoutes.initialize();
   fakeCarriers.initialize();
   fakeInsurancePackages.initialize();
-  fakePriceConfigurations.initialize();
+  fakePrices.initialize();
+  fakeCities.initialize();
   fakeZones.initialize();
+  fakeSurchargeTypes.initialize();
 };
 
 // Initialize data when this module is imported
@@ -65,6 +81,26 @@ export async function updateCountry(
 
 export async function deleteCountry(id: number): Promise<void> {
   return fakeCountries.delete(id);
+}
+
+// Cities
+export async function getCities(): Promise<City[]> {
+  return fakeCities.getAll();
+}
+
+export async function createCity(city: Omit<City, 'id'>): Promise<City> {
+  return fakeCities.create(city);
+}
+
+export async function updateCity(
+  id: number,
+  city: Partial<City>
+): Promise<City> {
+  return fakeCities.update(id, city);
+}
+
+export async function deleteCity(id: number): Promise<void> {
+  return fakeCities.delete(id);
 }
 
 // Branches
@@ -110,9 +146,10 @@ export async function deleteZone(id: number): Promise<void> {
 }
 
 // System entities (CommodityTypes, ShippingTypes, PaymentTypes)
-export async function getCommodityTypes(): Promise<CommodityType[]> {
-  return fakeCommodityTypes.getAll();
-}
+export const getCommodityTypes = async (): Promise<CommodityType[]> => {
+  await new Promise((resolve) => setTimeout(resolve, 50));
+  return mockCommodityTypes;
+};
 
 export async function createCommodityType(
   commodityType: Omit<CommodityType, 'id'>
@@ -131,9 +168,10 @@ export async function deleteCommodityType(id: number): Promise<void> {
   return fakeCommodityTypes.delete(id);
 }
 
-export async function getShippingTypes(): Promise<ShippingType[]> {
-  return fakeShippingTypes.getAll();
-}
+export const getShippingTypes = async (): Promise<ShippingType[]> => {
+  await new Promise((resolve) => setTimeout(resolve, 50));
+  return mockShippingTypes;
+};
 
 export async function createShippingType(
   shippingType: Omit<ShippingType, 'id'>
@@ -152,9 +190,10 @@ export async function deleteShippingType(id: number): Promise<void> {
   return fakeShippingTypes.delete(id);
 }
 
-export async function getPaymentTypes(): Promise<PaymentType[]> {
-  return fakePaymentTypes.getAll();
-}
+export const getPaymentTypes = async (): Promise<PaymentType[]> => {
+  await new Promise((resolve) => setTimeout(resolve, 50));
+  return mockPaymentTypes;
+};
 
 export async function createPaymentType(
   paymentType: Omit<PaymentType, 'id'>
@@ -174,9 +213,10 @@ export async function deletePaymentType(id: number): Promise<void> {
 }
 
 // Pricing
-export async function getRoutes(): Promise<Route[]> {
-  return fakeRoutes.getAll();
-}
+export const getRoutes = async (): Promise<Route[]> => {
+  await new Promise((resolve) => setTimeout(resolve, 50));
+  return mockRoutes;
+};
 
 export async function createRoute(route: Omit<Route, 'id'>): Promise<Route> {
   return fakeRoutes.create(route);
@@ -193,9 +233,15 @@ export async function deleteRoute(id: number): Promise<void> {
   return fakeRoutes.delete(id);
 }
 
-export async function getCarriers(): Promise<Carrier[]> {
-  return fakeCarriers.getAll();
-}
+export const getCarriers = async (): Promise<Carrier[]> => {
+  await new Promise((resolve) => setTimeout(resolve, 50)); // Simulate API delay
+  return mockCarriers;
+};
+
+export const getInsurancePackages = async (): Promise<InsurancePackage[]> => {
+  await new Promise((resolve) => setTimeout(resolve, 50));
+  return mockInsurancePackages;
+};
 
 export async function createCarrier(
   carrier: Omit<Carrier, 'id'>
@@ -212,10 +258,6 @@ export async function updateCarrier(
 
 export async function deleteCarrier(id: number): Promise<void> {
   return fakeCarriers.delete(id);
-}
-
-export async function getInsurancePackages(): Promise<InsurancePackage[]> {
-  return fakeInsurancePackages.getAll();
 }
 
 export async function createInsurancePackage(
@@ -235,23 +277,65 @@ export async function deleteInsurancePackage(id: number): Promise<void> {
   return fakeInsurancePackages.delete(id);
 }
 
-export async function getPriceConfigurations(): Promise<PriceConfiguration[]> {
-  return fakePriceConfigurations.getAll();
+export async function getPrices(): Promise<Price[]> {
+  return fakePrices.getAll();
 }
 
-export async function createPriceConfiguration(
-  priceConfig: Omit<PriceConfiguration, 'id'>
-): Promise<PriceConfiguration> {
-  return fakePriceConfigurations.create(priceConfig);
+export async function createPrice(
+  priceConfig: Omit<Price, 'id'>
+): Promise<Price> {
+  return fakePrices.create(priceConfig);
 }
 
-export async function updatePriceConfiguration(
+export async function updatePrice(
   id: number,
-  priceConfig: Partial<PriceConfiguration>
-): Promise<PriceConfiguration> {
-  return fakePriceConfigurations.update(id, priceConfig);
+  priceConfig: Partial<Price>
+): Promise<Price> {
+  return fakePrices.update(id, priceConfig);
 }
 
-export async function deletePriceConfiguration(id: number): Promise<void> {
-  return fakePriceConfigurations.delete(id);
+export async function deletePrice(id: number): Promise<void> {
+  return fakePrices.delete(id);
+}
+
+export async function getSurchargeTypes(): Promise<SurchargeType[]> {
+  return fakeSurchargeTypes.getAll();
+}
+
+export async function createSurchargeType(
+  surchargeType: Omit<SurchargeType, 'id'>
+): Promise<SurchargeType> {
+  return fakeSurchargeTypes.create(surchargeType);
+}
+
+export async function updateSurchargeType(
+  id: number,
+  surchargeType: Partial<SurchargeType>
+): Promise<SurchargeType> {
+  return fakeSurchargeTypes.update(id, surchargeType);
+}
+
+export async function deleteSurchargeType(id: number): Promise<void> {
+  return fakeSurchargeTypes.delete(id);
+}
+
+export async function getShippingServices(): Promise<ShippingService[]> {
+  return fakeShippingServices.getAll();
+}
+
+export async function createShippingService(
+  shippingService: Omit<ShippingService, 'id'>
+): Promise<ShippingService> {
+  return fakeShippingServices.create(shippingService);
+}
+
+export async function updateShippingService(
+  id: number,
+  shippingService: Partial<ShippingService>
+): Promise<ShippingService> {
+  return fakeShippingServices.update(id, shippingService);
+}
+
+export async function deleteShippingService(id: number): Promise<void> {
+  return fakeShippingServices.delete(id);
 }

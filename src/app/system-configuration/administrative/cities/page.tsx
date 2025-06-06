@@ -39,12 +39,12 @@ function CitiesPageContent() {
       >
         <div className='flex items-start justify-between'>
           <Heading
-            title='Cities'
-            description='Manage cities for pricing calculations'
+            title='Thành Phố'
+            description='Quản lý thành phố cho các tuyến giao hàng'
           />
           <Button onClick={handleAddNewCity}>
             <IconPlus className='mr-2 h-4 w-4' />
-            Add City
+            Thêm Thành Phố
           </Button>
         </div>
         <Separator />
@@ -59,7 +59,7 @@ function CitiesPageContent() {
       </div>
 
       <DataDrawer
-        title={city ? 'Edit City' : 'Add City'}
+        title={city ? 'Sửa Thành Phố' : 'Thêm Thành Phố'}
         isOpen={isOpen}
         onClose={closeDrawer}
       >

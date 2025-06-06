@@ -25,7 +25,7 @@ export const columns: ColumnDef<City>[] = [
     id: 'countryId',
     accessorKey: 'countryId',
     header: ({ column }: { column: Column<City, unknown> }) => (
-      <DataTableColumnHeader column={column} title='Country ID' />
+      <DataTableColumnHeader column={column} title='Quốc Gia' />
     ),
     cell: ({ row }) => {
       const country = row.original;
@@ -43,7 +43,7 @@ export const columns: ColumnDef<City>[] = [
     id: 'code',
     accessorKey: 'code',
     header: ({ column }: { column: Column<City, unknown> }) => (
-      <DataTableColumnHeader column={column} title='City Code' />
+      <DataTableColumnHeader column={column} title='Mã Thành Phố' />
     ),
     cell: ({ row }) => <div>{row.getValue<string>('code')}</div>,
     enableSorting: true,
@@ -57,14 +57,14 @@ export const columns: ColumnDef<City>[] = [
     id: 'name',
     accessorKey: 'name',
     header: ({ column }: { column: Column<City, unknown> }) => (
-      <DataTableColumnHeader column={column} title='City Name' />
+      <DataTableColumnHeader column={column} title='Tên Thành Phố' />
     ),
     cell: ({ row }) => <div>{row.getValue<string>('name')}</div>,
     enableSorting: true,
     enableColumnFilter: true,
     meta: {
-      label: 'name',
-      placeholder: 'Search by name...'
+      label: 'Tên Thành Phố',
+      placeholder: 'Tìm kiếm thành phố...'
     }
   },
   {

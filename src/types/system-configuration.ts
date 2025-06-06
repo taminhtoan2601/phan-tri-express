@@ -97,6 +97,12 @@ export interface Carrier {
   routes?: Route[];
 }
 
+export interface SurchargeType {
+  id: number;
+  name: string; // Example: "Fuel Surcharge", "Remote Area Surcharge"
+  description?: string;
+}
+
 export interface InsurancePackage {
   id: number;
   name: string;
@@ -135,19 +141,4 @@ export interface Price {
   baseRatePerKg: number;
   effectiveDate: string;
   deletionDate?: string;
-}
-
-// Bảo lưu interface cũ để tránh lỗi tương thích
-export interface PriceConfiguration {
-  id: number;
-  routeId: number;
-  carrierId: number;
-  commodityTypeId: number;
-  shippingTypeId: number;
-  basePrice: number;
-  pricePerKg: number;
-  minWeight: number;
-  maxWeight: number;
-  effectiveDate: string; // ISO date string
-  expiryDate?: string; // ISO date string, optional
 }

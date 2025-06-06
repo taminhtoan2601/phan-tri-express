@@ -6,7 +6,7 @@ export const prices: Price[] = [
     id: 1,
     routeId: 1,
     shippingServiceId: 1,
-    baseRatePerKg: 2.0,
+    baseRatePerKg: 100000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -14,7 +14,7 @@ export const prices: Price[] = [
     id: 2,
     routeId: 1,
     shippingServiceId: 2,
-    baseRatePerKg: 2.0,
+    baseRatePerKg: 100000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -22,7 +22,7 @@ export const prices: Price[] = [
     id: 3,
     routeId: 1,
     shippingServiceId: 3,
-    baseRatePerKg: 2.0,
+    baseRatePerKg: 100000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -32,7 +32,7 @@ export const prices: Price[] = [
     id: 4,
     routeId: 2,
     shippingServiceId: 1,
-    baseRatePerKg: 1.8,
+    baseRatePerKg: 120000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -40,7 +40,7 @@ export const prices: Price[] = [
     id: 5,
     routeId: 2,
     shippingServiceId: 2,
-    baseRatePerKg: 1.8,
+    baseRatePerKg: 110000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -48,7 +48,7 @@ export const prices: Price[] = [
     id: 6,
     routeId: 2,
     shippingServiceId: 3,
-    baseRatePerKg: 1.8,
+    baseRatePerKg: 110000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -58,7 +58,7 @@ export const prices: Price[] = [
     id: 7,
     routeId: 3,
     shippingServiceId: 1,
-    baseRatePerKg: 5.0,
+    baseRatePerKg: 150000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -66,7 +66,7 @@ export const prices: Price[] = [
     id: 8,
     routeId: 3,
     shippingServiceId: 2,
-    baseRatePerKg: 5.0,
+    baseRatePerKg: 150000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -74,7 +74,7 @@ export const prices: Price[] = [
     id: 9,
     routeId: 3,
     shippingServiceId: 3,
-    baseRatePerKg: 5.0,
+    baseRatePerKg: 150000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -84,7 +84,7 @@ export const prices: Price[] = [
     id: 10,
     routeId: 4,
     shippingServiceId: 1,
-    baseRatePerKg: 4.5,
+    baseRatePerKg: 140000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -92,7 +92,7 @@ export const prices: Price[] = [
     id: 11,
     routeId: 4,
     shippingServiceId: 2,
-    baseRatePerKg: 4.5,
+    baseRatePerKg: 140000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -100,7 +100,7 @@ export const prices: Price[] = [
     id: 12,
     routeId: 4,
     shippingServiceId: 3,
-    baseRatePerKg: 4.5,
+    baseRatePerKg: 140000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -110,7 +110,7 @@ export const prices: Price[] = [
     id: 13,
     routeId: 5,
     shippingServiceId: 1,
-    baseRatePerKg: 8.0,
+    baseRatePerKg: 160000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -118,7 +118,7 @@ export const prices: Price[] = [
     id: 14,
     routeId: 5,
     shippingServiceId: 2,
-    baseRatePerKg: 8.0,
+    baseRatePerKg: 160000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -126,7 +126,7 @@ export const prices: Price[] = [
     id: 15,
     routeId: 5,
     shippingServiceId: 3,
-    baseRatePerKg: 8.0,
+    baseRatePerKg: 160000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -136,7 +136,7 @@ export const prices: Price[] = [
     id: 16,
     routeId: 6,
     shippingServiceId: 1,
-    baseRatePerKg: 7.5,
+    baseRatePerKg: 75000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -144,7 +144,7 @@ export const prices: Price[] = [
     id: 17,
     routeId: 6,
     shippingServiceId: 2,
-    baseRatePerKg: 7.5,
+    baseRatePerKg: 75000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -152,7 +152,7 @@ export const prices: Price[] = [
     id: 18,
     routeId: 6,
     shippingServiceId: 3,
-    baseRatePerKg: 7.5,
+    baseRatePerKg: 75000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -162,7 +162,7 @@ export const prices: Price[] = [
     id: 19,
     routeId: 7,
     shippingServiceId: 1,
-    baseRatePerKg: 9.0,
+    baseRatePerKg: 90000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -170,7 +170,7 @@ export const prices: Price[] = [
     id: 20,
     routeId: 7,
     shippingServiceId: 2,
-    baseRatePerKg: 9.0,
+    baseRatePerKg: 90000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -178,7 +178,7 @@ export const prices: Price[] = [
     id: 21,
     routeId: 7,
     shippingServiceId: 3,
-    baseRatePerKg: 9.0,
+    baseRatePerKg: 90000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -188,7 +188,7 @@ export const prices: Price[] = [
     id: 22,
     routeId: 8,
     shippingServiceId: 1,
-    baseRatePerKg: 8.5,
+    baseRatePerKg: 85000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -196,7 +196,7 @@ export const prices: Price[] = [
     id: 23,
     routeId: 8,
     shippingServiceId: 2,
-    baseRatePerKg: 8.5,
+    baseRatePerKg: 85000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -204,7 +204,7 @@ export const prices: Price[] = [
     id: 24,
     routeId: 8,
     shippingServiceId: 3,
-    baseRatePerKg: 8.5,
+    baseRatePerKg: 85000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -214,7 +214,7 @@ export const prices: Price[] = [
     id: 25,
     routeId: 9,
     shippingServiceId: 1,
-    baseRatePerKg: 7.0,
+    baseRatePerKg: 70000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -222,7 +222,7 @@ export const prices: Price[] = [
     id: 26,
     routeId: 9,
     shippingServiceId: 2,
-    baseRatePerKg: 7.0,
+    baseRatePerKg: 70000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -230,7 +230,7 @@ export const prices: Price[] = [
     id: 27,
     routeId: 9,
     shippingServiceId: 3,
-    baseRatePerKg: 7.0,
+    baseRatePerKg: 70000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -240,7 +240,7 @@ export const prices: Price[] = [
     id: 28,
     routeId: 10,
     shippingServiceId: 1,
-    baseRatePerKg: 7.2,
+    baseRatePerKg: 72000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -248,7 +248,7 @@ export const prices: Price[] = [
     id: 29,
     routeId: 10,
     shippingServiceId: 2,
-    baseRatePerKg: 7.2,
+    baseRatePerKg: 72000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -256,7 +256,7 @@ export const prices: Price[] = [
     id: 30,
     routeId: 10,
     shippingServiceId: 3,
-    baseRatePerKg: 7.2,
+    baseRatePerKg: 72000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -266,7 +266,7 @@ export const prices: Price[] = [
     id: 31,
     routeId: 11,
     shippingServiceId: 1,
-    baseRatePerKg: 8.2,
+    baseRatePerKg: 82000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -274,7 +274,7 @@ export const prices: Price[] = [
     id: 32,
     routeId: 11,
     shippingServiceId: 2,
-    baseRatePerKg: 8.2,
+    baseRatePerKg: 82000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -282,7 +282,7 @@ export const prices: Price[] = [
     id: 33,
     routeId: 11,
     shippingServiceId: 3,
-    baseRatePerKg: 8.2,
+    baseRatePerKg: 82000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -292,7 +292,7 @@ export const prices: Price[] = [
     id: 34,
     routeId: 12,
     shippingServiceId: 1,
-    baseRatePerKg: 8.0,
+    baseRatePerKg: 80000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -300,7 +300,7 @@ export const prices: Price[] = [
     id: 35,
     routeId: 12,
     shippingServiceId: 2,
-    baseRatePerKg: 8.0,
+    baseRatePerKg: 80000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -308,7 +308,7 @@ export const prices: Price[] = [
     id: 36,
     routeId: 12,
     shippingServiceId: 3,
-    baseRatePerKg: 8.0,
+    baseRatePerKg: 80000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -318,7 +318,7 @@ export const prices: Price[] = [
     id: 37,
     routeId: 13,
     shippingServiceId: 1,
-    baseRatePerKg: 6.5,
+    baseRatePerKg: 65000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -326,7 +326,7 @@ export const prices: Price[] = [
     id: 38,
     routeId: 13,
     shippingServiceId: 2,
-    baseRatePerKg: 6.5,
+    baseRatePerKg: 65000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -334,7 +334,7 @@ export const prices: Price[] = [
     id: 39,
     routeId: 13,
     shippingServiceId: 3,
-    baseRatePerKg: 6.5,
+    baseRatePerKg: 65000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -344,7 +344,7 @@ export const prices: Price[] = [
     id: 40,
     routeId: 14,
     shippingServiceId: 1,
-    baseRatePerKg: 6.8,
+    baseRatePerKg: 68000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -352,7 +352,7 @@ export const prices: Price[] = [
     id: 41,
     routeId: 14,
     shippingServiceId: 2,
-    baseRatePerKg: 6.8,
+    baseRatePerKg: 68000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   },
@@ -360,7 +360,7 @@ export const prices: Price[] = [
     id: 42,
     routeId: 14,
     shippingServiceId: 3,
-    baseRatePerKg: 6.8,
+    baseRatePerKg: 68000,
     effectiveDate: '2025-01-01',
     deletionDate: ''
   }

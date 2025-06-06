@@ -3,7 +3,7 @@ import type { Branch } from '../types/system-configuration';
 export const branches: Branch[] = [
   {
     id: 1,
-    name: 'Ho Chi Minh City HQ',
+    name: 'Chi Nhánh TP.HCM',
     code: 'SGN-HQ',
     address: '123 Nguyen Hue Blvd, District 1',
     cityId: 1,
@@ -12,7 +12,7 @@ export const branches: Branch[] = [
   },
   {
     id: 2,
-    name: 'Hanoi Branch',
+    name: 'Chi Nhánh Hà Nội',
     code: 'HAN-01',
     address: '45 Ly Thuong Kiet St, Hoan Kiem District',
     cityId: 2,
@@ -21,7 +21,7 @@ export const branches: Branch[] = [
   },
   {
     id: 3,
-    name: 'Beijing Office',
+    name: 'Chi Nhánh Bắc Kinh',
     code: 'BJS-01',
     address: '789 Chaoyang Road, Chaoyang District',
     cityId: 3,
@@ -30,7 +30,7 @@ export const branches: Branch[] = [
   },
   {
     id: 4,
-    name: 'Tokyo Branch',
+    name: 'Chi Nhánh Tôkyô',
     code: 'TYO-01',
     address: '1-2-3 Shibuya, Shibuya-ku',
     cityId: 4,
@@ -39,7 +39,7 @@ export const branches: Branch[] = [
   },
   {
     id: 5,
-    name: 'Paris Office',
+    name: 'Chi Nhánh Paris',
     code: 'PAR-01',
     address: '123 Avenue des Champs-Élysées',
     cityId: 5,
@@ -48,7 +48,7 @@ export const branches: Branch[] = [
   },
   {
     id: 6,
-    name: 'New York Center',
+    name: 'Chi Nhánh New York',
     code: 'NYC-01',
     address: '555 Fifth Avenue, Manhattan',
     cityId: 6,
@@ -57,7 +57,7 @@ export const branches: Branch[] = [
   },
   {
     id: 7,
-    name: 'Singapore Hub',
+    name: 'Chi Nhánh Singapore',
     code: 'SIN-01',
     address: '88 Market Street, Downtown Core',
     cityId: 7,
@@ -66,7 +66,7 @@ export const branches: Branch[] = [
   },
   {
     id: 8,
-    name: 'Sydney Office',
+    name: 'Chi Nhánh Sydney',
     code: 'SYD-01',
     address: '200 George Street',
     cityId: 17,

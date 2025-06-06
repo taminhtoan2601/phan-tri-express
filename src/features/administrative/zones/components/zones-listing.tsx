@@ -111,7 +111,6 @@ export function ZonesListing() {
     refetchOnMount: true,
     refetchOnWindowFocus: true
   });
-  console.log(zonesData);
   // Display skeleton loader while data is loading
   if (isLoadingZones) {
     return <ZonesTableSkeleton />;

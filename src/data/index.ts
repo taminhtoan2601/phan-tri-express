@@ -15,4 +15,6 @@ export * from './fake-payment-types';
 export * from './fake-branches';
 export * from './fake-carriers';
 export * from './fake-insurance-packages';
-export * from './fake-price-configurations';
+export * from './fake-surcharge-types';
+export * from './fake-customer';
+export * from './fake-shipping-orders';

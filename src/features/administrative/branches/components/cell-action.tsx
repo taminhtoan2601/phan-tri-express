@@ -74,22 +74,22 @@ export function CellAction({ data }: CellActionProps) {
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant='ghost' className='h-8 w-8 p-0'>
-            <span className='sr-only'>Open menu</span>
+            <span className='sr-only'>Mở menu</span>
             <MoreHorizontal className='h-4 w-4' />
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align='end'>
-          <DropdownMenuLabel>Actions</DropdownMenuLabel>
+          <DropdownMenuLabel>Thao tác</DropdownMenuLabel>
           <DropdownMenuItem onClick={onEdit}>
             <Pencil className='mr-2 h-4 w-4' />
-            Edit
+            Điều chỉnh
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={() => setOpen(true)}
             className='text-red-600'
           >
             <Trash className='mr-2 h-4 w-4' />
-            Delete
+            Xóa
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

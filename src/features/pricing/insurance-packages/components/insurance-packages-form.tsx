@@ -31,10 +31,10 @@ import {
 const formSchema = z.object({
   name: z
     .string()
-    .min(1, { message: 'Name is required' })
-    .max(100, { message: 'Name cannot exceed 100 characters' }),
-  rate: z.number().min(0, { message: 'Rate must be a positive number' }),
-  activeDate: z.string().min(1, { message: 'Active date is required' })
+    .min(1, { message: 'Tên là bắt buộc' })
+    .max(100, { message: 'Tên không được vượt quá 100 ký tự' }),
+  rate: z.number().min(0, { message: 'Giá phải là số dương' }),
+  activeDate: z.string().min(1, { message: 'Ngày hiệu lực là bắt buộc' })
 });
 
 type InsurancePackageFormValues = z.infer<typeof formSchema>;
@@ -75,11 +75,11 @@ export function InsurancePackageForm({
     mutationFn: createInsurancePackage,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['insurance-packages'] });
-      toast.success('Insurance package created successfully');
+      toast.success('Gói bảo hiểm được tạo thành công.');
       onClose();
     },
     onError: (error: Error) => {
-      toast.error(`Failed to create commodity type: ${error.message}`);
+      toast.error(`Failed to create insurance package: ${error.message}`);
     }
   });
 
@@ -94,11 +94,11 @@ export function InsurancePackageForm({
     }) => updateInsurancePackage(id, data),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['insurance-packages'] });
-      toast.success('Insurance package updated successfully');
+      toast.success('Gói bảo hiểm được cập nhật thành công.');
       onClose();
     },
     onError: (error: Error) => {
-      toast.error(`Failed to update commodity type: ${error.message}`);
+      toast.error(`Failed to update insurance package: ${error.message}`);
     }
   });
 
@@ -126,9 +126,9 @@ export function InsurancePackageForm({
           name='name'
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name</FormLabel>
+              <FormLabel>Tên</FormLabel>
               <FormControl>
-                <Input placeholder='e.g. Basic Coverage' {...field} />
+                <Input placeholder='Tên gói bảo hiểm' {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -140,9 +140,9 @@ export function InsurancePackageForm({
           name='rate'
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Rate</FormLabel>
+              <FormLabel>Tỉ Giá</FormLabel>
               <FormControl>
-                <Input type='number' placeholder='e.g. 1000' {...field} />
+                <Input type='number' placeholder='Tỉ giá' {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -154,9 +154,9 @@ export function InsurancePackageForm({
           name='activeDate'
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Active Date</FormLabel>
+              <FormLabel>Ngày Hiệu Lực</FormLabel>
               <FormControl>
-                <Input type='date' placeholder='e.g. 2023-01-01' {...field} />
+                <Input type='date' placeholder='Ngày hiệu lực' {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -170,7 +170,7 @@ export function InsurancePackageForm({
             onClick={onClose}
             disabled={isPending}
           >
-            Cancel
+            Hủy
           </Button>
           <Button
             type='submit'
@@ -179,10 +179,10 @@ export function InsurancePackageForm({
             }
           >
             {createMutation.isPending || updateMutation.isPending || isPending
-              ? 'Saving...'
+              ? 'Đang Lưu...'
               : initialData
-                ? 'Update'
-                : 'Create'}
+                ? 'Cập Nhật'
+                : 'Tạo'}
           </Button>
         </div>
       </form>

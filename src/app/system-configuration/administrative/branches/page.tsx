@@ -34,12 +34,12 @@ export function BranchesContent() {
       >
         <div className='flex items-start justify-between'>
           <Heading
-            title='Branches'
-            description='Manage branch offices and locations'
+            title='Chi nhánh'
+            description='Quản lý chi nhánh và vị trí'
           />
           <Button onClick={handleAddNewBranch}>
             <IconPlus className='mr-2 h-4 w-4' />
-            Add Branch
+            Thêm Chi nhánh
           </Button>
         </div>
         <Separator />
@@ -54,7 +54,7 @@ export function BranchesContent() {
       </div>
 
       <DataDrawer
-        title={branch ? 'Edit Branch' : 'Add Branch'}
+        title={branch ? 'Điều chỉnh Chi nhánh' : 'Thêm Chi nhánh'}
         isOpen={isOpen}
         onClose={closeDrawer}
       >

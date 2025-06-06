@@ -83,11 +83,11 @@ export default function PricingRulesPage() {
     mutationFn: createPricingRule,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['pricingRules'] });
-      toast.success('Pricing rule created successfully');
+      toast.success('Đã tạo Quy tắc giá thành công');
       closeDrawer();
     },
     onError: (error) => {
-      toast.error(`Failed to create pricing rule: ${error.message}`);
+      toast.error(`Thất bại khi tạo Quy tắc giá: ${error.message}`);
     }
   });
 
@@ -97,11 +97,11 @@ export default function PricingRulesPage() {
       updatePricingRule(id, data),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['pricingRules'] });
-      toast.success('Pricing rule updated successfully');
+      toast.success('Đã cập nhật Quy tắc giá thành công');
       closeDrawer();
     },
     onError: (error) => {
-      toast.error(`Failed to update pricing rule: ${error.message}`);
+      toast.error(`Thất bại khi cập nhật Quy tắc giá: ${error.message}`);
     }
   });
 
@@ -110,7 +110,7 @@ export default function PricingRulesPage() {
     mutationFn: deletePricingRule,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['pricingRules'] });
-      toast.success('Pricing rule deleted successfully');
+      toast.success('Đã xóa Quy tắc giá thành công');
     },
     onError: (error) => {
       toast.error(`Failed to delete pricing rule: ${error.message}`);
@@ -160,7 +160,7 @@ export default function PricingRulesPage() {
    * @param rule Pricing rule to delete
    */
   const handleDelete = (rule: PricingRule) => {
-    if (window.confirm('Are you sure you want to delete this pricing rule?')) {
+    if (window.confirm('Bạn có chắc chắn muốn xóa Quy tắc giá này?')) {
       deleteMutation.mutate(rule.id);
     }
   };
@@ -173,7 +173,7 @@ export default function PricingRulesPage() {
     e.preventDefault();
 
     if (!formData.name.trim()) {
-      toast.error('Rule name is required');
+      toast.error('Tên Quy tắc giá không được để trống');
       return;
     }
 
@@ -181,7 +181,7 @@ export default function PricingRulesPage() {
       isNaN(Number(formData.volumetricDivisor)) ||
       Number(formData.volumetricDivisor) <= 0
     ) {
-      toast.error('Volumetric divisor must be a positive number');
+      toast.error('Divisor phải là số dương');
       return;
     }
 
@@ -219,19 +219,19 @@ export default function PricingRulesPage() {
     },
     {
       key: 'name',
-      header: 'Name',
+      header: 'Tên Quy tắc giá',
       render: (rule: PricingRule) => <span>{rule.name}</span>
     },
     {
       key: 'volumetricDivisor',
-      header: 'Volumetric Divisor',
+      header: 'Hệ số quy đổi',
       render: (rule: PricingRule) => (
         <span>{rule.volumetricDivisor.toLocaleString()}</span>
       )
     },
     {
       key: 'example',
-      header: 'Example Calculation',
+      header: 'Ví dụ',
       render: (rule: PricingRule) => {
         const volume = 100 * 50 * 30; // 100cm × 50cm × 30cm = 150,000 cm³
         const volumetricWeight = volume / rule.volumetricDivisor;
@@ -244,7 +244,7 @@ export default function PricingRulesPage() {
     },
     {
       key: 'actions',
-      header: 'Actions',
+      header: 'Hành động',
       render: (rule: PricingRule) => (
         <div className='flex space-x-2'>
           <Button
@@ -269,9 +269,9 @@ export default function PricingRulesPage() {
   return (
     <div className='container mx-auto py-6'>
       <div className='mb-8'>
-        <h1 className='mb-2 text-3xl font-bold'>Pricing Rules</h1>
+        <h1 className='mb-2 text-3xl font-bold'>Quy tắc giá</h1>
         <p className='text-muted-foreground'>
-          Manage pricing rules and volumetric weight calculations
+          Quản lý quy tắc giá và tính toán trọng lượng
         </p>
       </div>
 
@@ -283,13 +283,13 @@ export default function PricingRulesPage() {
       />
 
       <DataDrawer
-        title={isEditing ? 'Edit Pricing Rule' : 'Add Pricing Rule'}
+        title={isEditing ? 'Sửa Quy tắc giá' : 'Thêm Quy tắc giá'}
         isOpen={isDrawerOpen}
         onClose={closeDrawer}
       >
         <form onSubmit={handleSubmit} className='space-y-6'>
           <div className='space-y-2'>
-            <Label htmlFor='name'>Rule Name</Label>
+            <Label htmlFor='name'>Tên Quy tắc giá</Label>
             <Input
               id='name'
               name='name'
@@ -300,33 +300,34 @@ export default function PricingRulesPage() {
           </div>
 
           <div className='space-y-2'>
-            <Label htmlFor='volumetricDivisor'>Volumetric Divisor</Label>
+            <Label htmlFor='volumetricDivisor'>Hệ số quy đổi</Label>
             <Input
               id='volumetricDivisor'
               name='volumetricDivisor'
               type='number'
               value={formData.volumetricDivisor}
               onChange={handleInputChange}
-              placeholder='Volumetric divisor (typically 5000)'
+              placeholder='Hệ số quy đổi (thường là 5000)'
               min='1'
               step='100'
             />
             <p className='text-muted-foreground text-sm'>
-              Volumetric weight (kg) = Length × Width × Height (cm) ÷ Divisor
+              Trọng lượng (kg) = Chiều dài × Chiều rộng × Chiều cao (cm) ÷ Hệ số
+              quy đổi
             </p>
           </div>
 
           <div className='flex justify-end space-x-2'>
             <Button type='button' variant='outline' onClick={closeDrawer}>
-              Cancel
+              Hủy
             </Button>
             <Button
               type='submit'
               disabled={createMutation.isPending || updateMutation.isPending}
             >
               {createMutation.isPending || updateMutation.isPending
-                ? 'Saving...'
-                : 'Save'}
+                ? 'Đang lưu...'
+                : 'Lưu'}
             </Button>
           </div>
         </form>

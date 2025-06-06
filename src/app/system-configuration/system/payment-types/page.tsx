@@ -33,12 +33,12 @@ function PaymentTypesPageContent() {
       >
         <div className='flex items-start justify-between'>
           <Heading
-            title='Payment Types'
-            description='Manage payment types used in shipping orders'
+            title='Loại Thanh Toán'
+            description='Quản lý các loại thanh toán được sử dụng trong các đơn hàng giao hàng'
           />
           <Button onClick={() => openDrawer()}>
             <IconPlus className='mr-2 h-4 w-4' />
-            Add Payment Type
+            Thêm Loại Thanh Toán
           </Button>
         </div>
         <Separator />
@@ -53,7 +53,9 @@ function PaymentTypesPageContent() {
       </div>
 
       <DataDrawer
-        title={paymentType ? 'Edit Payment Type' : 'Add Payment Type'}
+        title={
+          paymentType ? 'Điều chỉnh Loại Thanh Toán' : 'Thêm Loại Thanh Toán'
+        }
         isOpen={isOpen}
         onClose={closeDrawer}
       >

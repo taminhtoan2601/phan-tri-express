@@ -33,12 +33,12 @@ function ZonesPageContent() {
       >
         <div className='flex items-start justify-between'>
           <Heading
-            title='Shipping Zones'
-            description='Manage shipping zones for pricing calculations'
+            title='Khu Vực'
+            description='Cấu hình các khu vực giao hàng'
           />
           <Button onClick={() => openDrawer()}>
             <IconPlus className='mr-2 h-4 w-4' />
-            Add Zone
+            Thêm Khu Vực
           </Button>
         </div>
         <Separator />
@@ -53,7 +53,7 @@ function ZonesPageContent() {
       </div>
 
       <DataDrawer
-        title={zone ? 'Edit Zone' : 'Add Zone'}
+        title={zone ? 'Sửa Khu Vực' : 'Thêm Khu Vực'}
         isOpen={isOpen}
         onClose={closeDrawer}
       >

@@ -27,14 +27,14 @@ export const columns: ColumnDef<Carrier>[] = [
     id: 'name',
     accessorKey: 'name',
     header: ({ column }: { column: Column<Carrier, unknown> }) => (
-      <DataTableColumnHeader column={column} title='Name' />
+      <DataTableColumnHeader column={column} title='Tên' />
     ),
     cell: ({ row }) => <div>{row.getValue<string>('name')}</div>,
     enableSorting: true,
     enableColumnFilter: true,
     meta: {
-      label: 'Name',
-      placeholder: 'Search by name...',
+      label: 'Tên',
+      placeholder: 'Tìm kiếm theo tên...',
       variant: 'text',
       icon: Globe
     }
@@ -43,7 +43,7 @@ export const columns: ColumnDef<Carrier>[] = [
     id: 'routeIds',
     accessorKey: 'routeIds',
     header: ({ column }: { column: Column<Carrier, unknown> }) => (
-      <DataTableColumnHeader column={column} title='Route Name' />
+      <DataTableColumnHeader column={column} title='Các Tuyến Vận Chuyển' />
     ),
     cell: ({ row }) => {
       const routes = row.original.routes;
@@ -52,8 +52,8 @@ export const columns: ColumnDef<Carrier>[] = [
     enableSorting: false,
     enableColumnFilter: true,
     meta: {
-      label: 'Routes',
-      placeholder: 'Search by routes...',
+      label: 'Tên Tuyến',
+      placeholder: 'Tìm kiếm theo tên tuyến...',
       variant: 'multiSelect',
       options: routes.map((route) => ({
         label: route.name,

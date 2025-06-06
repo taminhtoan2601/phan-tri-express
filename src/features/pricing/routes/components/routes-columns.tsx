@@ -27,7 +27,7 @@ export const columns: ColumnDef<Route>[] = [
     id: 'zoneId',
     accessorKey: 'zoneId',
     header: ({ column }: { column: Column<Route, unknown> }) => (
-      <DataTableColumnHeader column={column} title='Zone' />
+      <DataTableColumnHeader column={column} title='Khu Vực' />
     ),
     cell: ({ row }) => {
       // Truy cập thuộc tính zone đã được join sẵn
@@ -38,7 +38,7 @@ export const columns: ColumnDef<Route>[] = [
     enableSorting: true,
     enableColumnFilter: true,
     meta: {
-      label: 'Zone',
+      label: 'Khu Vực',
       variant: 'multiSelect',
       options: zones.map((zone) => ({
         label: zone.name,
@@ -50,7 +50,7 @@ export const columns: ColumnDef<Route>[] = [
     id: 'originCountryId',
     accessorKey: 'originCountryId',
     header: ({ column }: { column: Column<Route, unknown> }) => (
-      <DataTableColumnHeader column={column} title='Origin Country' />
+      <DataTableColumnHeader column={column} title='Quốc Gia Đi' />
     ),
     cell: ({ row }) => {
       // Truy cập thuộc tính zone đã được join sẵn
@@ -65,7 +65,7 @@ export const columns: ColumnDef<Route>[] = [
     enableSorting: true,
     enableColumnFilter: true,
     meta: {
-      label: 'Origin Country',
+      label: 'Quốc Gia Đi',
       variant: 'multiSelect',
       options: countries.map((country) => ({
         label: country.name,
@@ -77,7 +77,7 @@ export const columns: ColumnDef<Route>[] = [
     id: 'originCityId',
     accessorKey: 'originCityId',
     header: ({ column }: { column: Column<Route, unknown> }) => (
-      <DataTableColumnHeader column={column} title='Origin City' />
+      <DataTableColumnHeader column={column} title='Thành Phố Đi' />
     ),
     cell: ({ row }) => {
       // Truy cập thuộc tính zone đã được join sẵn
@@ -90,7 +90,7 @@ export const columns: ColumnDef<Route>[] = [
     enableSorting: true,
     enableColumnFilter: true,
     meta: {
-      label: 'Origin City',
+      label: 'Thành Phố Đi',
       variant: 'multiSelect',
       options: cities.map((city) => ({
         label: city.name,
@@ -102,7 +102,7 @@ export const columns: ColumnDef<Route>[] = [
     id: 'destinationCountryId',
     accessorKey: 'destinationCountryId',
     header: ({ column }: { column: Column<Route, unknown> }) => (
-      <DataTableColumnHeader column={column} title='Destination Country' />
+      <DataTableColumnHeader column={column} title='Quốc Gia Đến' />
     ),
     cell: ({ row }) => {
       // Truy cập thuộc tính zone đã được join sẵn
@@ -118,7 +118,7 @@ export const columns: ColumnDef<Route>[] = [
     enableSorting: true,
     enableColumnFilter: true,
     meta: {
-      label: 'Destination Country',
+      label: 'Quốc Gia Đến',
       variant: 'multiSelect',
       options: countries.map((country) => ({
         label: country.name,
@@ -130,7 +130,7 @@ export const columns: ColumnDef<Route>[] = [
     id: 'destinationCityId',
     accessorKey: 'destinationCityId',
     header: ({ column }: { column: Column<Route, unknown> }) => (
-      <DataTableColumnHeader column={column} title='Destination City' />
+      <DataTableColumnHeader column={column} title='Thành Phố Đến' />
     ),
     cell: ({ row }) => {
       // Truy cập thuộc tính zone đã được join sẵn
@@ -145,7 +145,7 @@ export const columns: ColumnDef<Route>[] = [
     enableSorting: true,
     enableColumnFilter: true,
     meta: {
-      label: 'Destination City',
+      label: 'Thành Phố Đến',
       variant: 'multiSelect',
       options: cities.map((city) => ({
         label: city.name,
