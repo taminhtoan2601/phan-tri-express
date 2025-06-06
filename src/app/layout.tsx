@@ -10,6 +10,8 @@ import { NuqsAdapter } from 'nuqs/adapters/next/app';
 import './globals.css';
 import './theme.css';
 import { Inter } from 'next/font/google';
+import { ClerkProvider } from '@clerk/nextjs';
+import { viVN } from '@clerk/localizations';
 
 // đổi sang Inter static
 const inter = Inter({
@@ -43,48 +45,50 @@ export default async function RootLayout({
   const isScaled = activeThemeValue?.endsWith('-scaled');
 
   return (
-    <html lang='vi' suppressHydrationWarning className={`${inter.variable}`}>
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
+    <ClerkProvider localization={viVN}>
+      <html lang='vi' suppressHydrationWarning className={`${inter.variable}`}>
+        <head>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
               try {
                 if (localStorage.theme === 'dark' || ((!('theme' in localStorage) || localStorage.theme === 'system') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                   document.querySelector('meta[name="theme-color"]').setAttribute('content', '${META_THEME_COLORS.dark}')
                 }
               } catch (_) {}
             `
-          }}
-        />
-      </head>
-      <body
-        className={cn(
-          'bg-background overflow-hidden overscroll-none font-sans antialiased',
-          activeThemeValue ? `theme-${activeThemeValue}` : '',
-          isScaled ? 'theme-scaled' : '',
-          fontVariables
-        )}
-      >
-        <NextTopLoader showSpinner={false} />
-        <NuqsAdapter>
-          <ThemeProvider
-            attribute='class'
-            defaultTheme='system'
-            enableSystem
-            disableTransitionOnChange
-            enableColorScheme
-          >
-            <Providers activeThemeValue={activeThemeValue as string}>
-              <Toaster
-                richColors={true}
-                swipeDirections={['top', 'bottom']}
-                theme='light'
-              />
-              {children}
-            </Providers>
-          </ThemeProvider>
-        </NuqsAdapter>
-      </body>
-    </html>
+            }}
+          />
+        </head>
+        <body
+          className={cn(
+            'bg-background overflow-hidden overscroll-none font-sans antialiased',
+            activeThemeValue ? `theme-${activeThemeValue}` : '',
+            isScaled ? 'theme-scaled' : '',
+            fontVariables
+          )}
+        >
+          <NextTopLoader showSpinner={false} />
+          <NuqsAdapter>
+            <ThemeProvider
+              attribute='class'
+              defaultTheme='system'
+              enableSystem
+              disableTransitionOnChange
+              enableColorScheme
+            >
+              <Providers activeThemeValue={activeThemeValue as string}>
+                <Toaster
+                  richColors={true}
+                  swipeDirections={['top', 'bottom']}
+                  theme='light'
+                />
+                {children}
+              </Providers>
+            </ThemeProvider>
+          </NuqsAdapter>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

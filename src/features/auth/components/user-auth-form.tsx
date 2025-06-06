@@ -15,7 +15,6 @@ import { useTransition } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import * as z from 'zod';
-import GithubSignInButton from './github-auth-button';
 
 const formSchema = z.object({
   email: z.string().email({ message: 'Enter a valid email address' })
@@ -37,7 +36,7 @@ export default function UserAuthForm() {
 
   const onSubmit = async (data: UserFormValue) => {
     startTransition(() => {
-      toast.success('Signed In Successfully!');
+      toast.success('Đăng nhập thành công!');
     });
   };
 
@@ -57,7 +56,7 @@ export default function UserAuthForm() {
                 <FormControl>
                   <Input
                     type='email'
-                    placeholder='Enter your email...'
+                    placeholder='Nhập email...'
                     disabled={loading}
                     {...field}
                   />
@@ -72,7 +71,7 @@ export default function UserAuthForm() {
             className='mt-2 ml-auto w-full'
             type='submit'
           >
-            Continue With Email
+            Tiếp tục với email
           </Button>
         </form>
       </Form>
@@ -82,11 +81,10 @@ export default function UserAuthForm() {
         </div>
         <div className='relative flex justify-center text-xs uppercase'>
           <span className='bg-background text-muted-foreground px-2'>
-            Or continue with
+            Hoặc đăng nhập với
           </span>
         </div>
       </div>
-      <GithubSignInButton />
     </>
   );
 }
